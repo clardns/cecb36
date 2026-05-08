@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cours & horaires — Club d'Éducation Canine Blancois CECB36</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --vert:#4a8c5e; --vert-clair:#5fa674; --vert-pale:#d9ead0;
+      --ocre:#c8a45a; --creme:#f5f2ea; --nuit:#1a2e22;
+      --blanc:#ffffff; --texte:#1a1a1a; --gris:#6a5f4e;
+      --ombre:rgba(0,0,0,0.07); --radius:16px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Nunito',sans-serif;background:var(--creme);color:var(--texte);overflow-x:hidden;}
+
+    /* NAV */
+    header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,242,234,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--vert-pale);padding:0 2rem;}
+    nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:70px;}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .nav-links{display:flex;gap:2rem;list-style:none;}
+    .nav-links a{text-decoration:none;color:var(--texte);font-weight:600;font-size:0.9rem;transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--vert);}
+    .nav-cta{background:var(--vert)!important;color:var(--blanc)!important;padding:10px 20px;border-radius:50px;}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--texte);border-radius:2px;}
+
+    /* SECTIONS */
+    section{padding:5rem 2rem;}
+    .section-inner{max-width:1100px;margin:0 auto;}
+    .section-label{display:inline-block;background:var(--vert-pale);color:var(--vert);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:1rem;}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.25;margin-bottom:1rem;}
+    .section-sub{font-size:1rem;color:var(--gris);line-height:1.7;max-width:660px;}
+
+    /* HERO PAGE */
+    .page-hero{padding:130px 2rem 5rem;background:linear-gradient(135deg,rgba(74,140,94,0.12) 0%,transparent 60%),var(--creme);}
+    .page-hero-inner{max-width:1100px;margin:0 auto;}
+    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4vw,3.6rem);line-height:1.15;margin-bottom:1.2rem;}
+    .page-hero h1 em{color:var(--vert);font-style:italic;}
+    .page-hero p{font-size:1.05rem;color:var(--gris);line-height:1.75;max-width:600px;}
+
+    /* PLANNING VISUEL */
+    #planning{background:var(--blanc);}
+    .planning-band{background:var(--nuit);border-radius:24px;padding:2.5rem;margin-top:3rem;}
+    .planning-title{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-bottom:1.5rem;text-align:center;}
+    .planning-grid{display:grid;grid-template-columns:80px 1fr 1fr 1fr;gap:0;}
+    .planning-header{background:rgba(255,255,255,0.08);padding:0.7rem 1rem;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.06em;}
+    .planning-header:first-child{border-radius:10px 0 0 0;}
+    .planning-header:last-child{border-radius:0 10px 0 0;}
+    .planning-time{padding:1rem;display:flex;align-items:center;justify-content:center;border-top:1px solid rgba(255,255,255,0.06);}
+    .planning-time span{font-size:0.82rem;font-weight:700;color:rgba(255,255,255,0.5);}
+    .planning-slot{padding:0.8rem 1rem;border-top:1px solid rgba(255,255,255,0.06);border-left:1px solid rgba(255,255,255,0.06);}
+    .slot-filled{background:rgba(74,140,94,0.25);border-radius:8px;padding:0.6rem 0.8rem;}
+    .slot-name{font-size:0.85rem;font-weight:700;color:#fff;}
+    .slot-desc{font-size:0.75rem;color:rgba(255,255,255,0.6);margin-top:2px;}
+    .slot-empty{height:100%;min-height:52px;}
+
+    /* COURS */
+    #cours{background:var(--creme);}
+    .cours-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem;}
+    .cours-card{background:var(--blanc);border-radius:var(--radius);padding:1.8rem;border:1.5px solid var(--vert-pale);display:flex;flex-direction:column;gap:0.6rem;position:relative;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;}
+    .cours-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--vert);opacity:0;transition:opacity 0.2s;}
+    .cours-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(74,140,94,0.15);}
+    .cours-card:hover::before{opacity:1;}
+    .cours-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.4rem;}
+    .cours-icon{font-size:2rem;}
+    .cours-tag{font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;background:var(--vert-pale);color:var(--vert);padding:4px 12px;border-radius:50px;}
+    .cours-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--texte);}
+    .cours-desc{font-size:0.88rem;color:var(--gris);line-height:1.65;flex:1;}
+    .cours-horaire{display:inline-flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--vert);font-weight:700;margin-top:0.4rem;}
+    .cours-dot{width:7px;height:7px;background:var(--vert);border-radius:50%;flex-shrink:0;}
+    .cours-niveau{font-size:0.78rem;color:var(--gris);margin-top:0.3rem;font-style:italic;}
+
+    /* TARIFS */
+    #tarifs{background:var(--blanc);}
+    .tarifs-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:stretch;margin-top:2.5rem;}
+    .tarifs-card{background:var(--creme);border-radius:var(--radius);padding:2rem;border:1.5px solid var(--vert-pale);}
+    .tarif-row{display:flex;justify-content:space-between;align-items:center;padding:0.8rem 0;border-bottom:1px solid var(--vert-pale);}
+    .tarif-row:last-child{border-bottom:none;}
+    .tarif-label{font-size:0.92rem;color:var(--gris);}
+    .tarif-label small{display:block;font-size:0.78rem;color:var(--gris);opacity:0.7;}
+    .tarif-prix{font-size:1.2rem;font-weight:700;color:var(--vert);}
+    .seances-card{background:var(--vert);border-radius:var(--radius);padding:2rem;color:var(--blanc);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+    .seances-card .big-emoji{font-size:3rem;margin-bottom:1rem;}
+    .seances-card h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--blanc);margin-bottom:0.8rem;}
+    .seances-card p{font-size:0.92rem;color:rgba(255,255,255,0.88);line-height:1.7;max-width:320px;}
+    .tarif-note{background:var(--vert-pale);border-radius:10px;padding:1rem 1.2rem;margin-top:1rem;font-size:0.85rem;color:var(--vert);line-height:1.6;}
+
+    /* DOCS */
+    #docs{background:var(--creme);}
+    .docs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:2rem;}
+    .doc-card{background:var(--blanc);border-radius:var(--radius);padding:1.6rem;border:1.5px solid var(--vert-pale);display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--texte);transition:all 0.2s;}
+    .doc-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(74,140,94,0.1);border-color:var(--vert);}
+    .doc-icon{font-size:2.4rem;flex-shrink:0;}
+    .doc-name{font-weight:700;font-size:0.95rem;margin-bottom:0.2rem;}
+    .doc-desc{font-size:0.82rem;color:var(--gris);}
+
+    /* INSCRIPTION */
+    #inscription{background:var(--blanc);}
+    .inscription-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:2.5rem;}
+    .steps{display:flex;flex-direction:column;gap:1rem;}
+    .step{display:flex;align-items:flex-start;gap:1rem;}
+    .step-num{width:36px;height:36px;border-radius:50%;background:var(--vert);color:var(--blanc);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;flex-shrink:0;}
+    .step-content h4{font-weight:700;font-size:0.95rem;margin-bottom:0.3rem;}
+    .step-content p{font-size:0.88rem;color:var(--gris);line-height:1.6;}
+    .contact-box{background:var(--nuit);border-radius:var(--radius);padding:2rem;}
+    .contact-box h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--blanc);margin-bottom:1.5rem;}
+    .contact-item{display:flex;align-items:center;gap:12px;padding:0.8rem 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+    .contact-item:last-child{border-bottom:none;}
+    .contact-item .ci{font-size:1.4rem;flex-shrink:0;}
+    .contact-item .ci-label{font-size:0.75rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px;}
+    .contact-item .ci-val{font-size:0.95rem;color:var(--blanc);font-weight:600;}
+    .contact-item .ci-val a{color:var(--blanc);text-decoration:none;}
+    .map-placeholder{background:rgba(255,255,255,0.08);border-radius:12px;padding:2rem;text-align:center;margin-top:1rem;border:1px dashed rgba(255,255,255,0.2);}
+    .map-placeholder .map-icon{font-size:2rem;margin-bottom:0.5rem;display:block;}
+    .map-placeholder p{font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:0.8rem;}
+    .map-link{color:var(--blanc);font-weight:700;font-size:0.85rem;background:rgba(255,255,255,0.15);padding:7px 16px;border-radius:50px;text-decoration:none;display:inline-block;}
+
+    /* FOOTER */
+    footer{background:var(--nuit);color:rgba(255,255,255,0.6);text-align:center;padding:2rem;font-size:0.82rem;}
+    footer strong{color:rgba(255,255,255,0.9);}
+
+    /* ANIMATIONS */
+    .fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-in.visible{opacity:1;transform:none;}
+
+    @media(max-width:768px){
+      .nav-links{display:none;}
+      .nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--creme);padding:1.5rem 2rem;border-bottom:1px solid var(--vert-pale);gap:1.2rem;}
+      .hamburger{display:flex;}
+      .cours-grid{grid-template-columns:1fr 1fr;}
+      .tarifs-grid,.inscription-grid,.docs-grid{grid-template-columns:1fr;}
+      .planning-grid{grid-template-columns:60px 1fr 1fr;}
+      section{padding:3.5rem 1.5rem;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">
+      <div style="display:flex;flex-direction:column;line-height:1.1;">
+        <span style="font-family:Georgia,serif;font-size:1.55rem;font-weight:700;color:#4a8c5e;letter-spacing:-0.5px;">CECB</span>
+        <div style="height:2px;background:#c8a45a;margin:3px 0 4px;"></div>
+        <span style="font-family:Arial,sans-serif;font-size:0.62rem;font-weight:600;color:#5a5040;letter-spacing:0.12em;text-transform:uppercase;">Club d'Éducation Canine Blancois</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="le-club.html">Le club</a></li>
+      <li><a href="cours-horaires.html" class="active">Cours & horaires</a></li>
+      <li><a href="photos.html">Photos</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Nous contacter</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner fade-in">
+    <span class="section-label">Programme</span>
+    <h1>Cours & <em>horaires</em></h1>
+    <p style="margin-top:1.2rem;">Les séances ont lieu <strong>chaque samedi matin</strong> sur le site du club — ZI des Groges, route de Concremiers, à la sortie du Blanc. Par petits groupes de 5 binômes maximum.</p>
+  </div>
+</div>
+
+<!-- PLANNING VISUEL -->
+<section id="planning">
+  <div class="section-inner">
+    <div class="fade-in">
+      <span class="section-label">Vue d'ensemble</span>
+      <h2 class="section-title">Le samedi matin au CECB</h2>
+      <p class="section-sub">Trois créneaux se succèdent chaque samedi, permettant à chaque niveau d'avancer à son rythme.</p>
+    </div>
+    <div class="planning-band fade-in" style="transition-delay:0.1s">
+      <div class="planning-title">Programme du samedi</div>
+      <div class="planning-grid">
+        <div class="planning-header" style="background:rgba(255,255,255,0.05);border-radius:10px 0 0 0;padding:0.7rem;">⏰</div>
+        <div class="planning-header">Cours</div>
+        <div class="planning-header">Niveau</div>
+        <div class="planning-header" style="border-radius:0 10px 0 0;">Public</div>
+
+        <div class="planning-time"><span>9h00<br>9h45</span></div>
+        <div class="planning-slot"><div class="slot-filled"><div class="slot-name">🎯 Cours ado A</div><div class="slot-desc">Obéissance débutant</div></div></div>
+        <div class="planning-slot"><div class="slot-filled"><div class="slot-name">Non-confirmés</div><div class="slot-desc">8 mois et +</div></div></div>
+        <div class="planning-slot"><div class="slot-filled"><div class="slot-name">Débutants</div><div class="slot-desc">Tous les chiens</div></div></div>
+
+        <div class="planning-time"><span>9h45<br>10h30</span></div>
+        <div class="planning-slot"><div class="slot-filled" style="background:rgba(200,164,90,0.25)"><div class="slot-name">🐣 École du chiot</div><div class="slot-desc">Socialisation & éveil</div></div></div>
+        <div class="planning-slot"><div class="slot-filled" style="background:rgba(200,164,90,0.25)"><div class="slot-name">Chiots</div><div class="slot-desc">Dès 2 mois</div></div></div>
+        <div class="planning-slot"><div class="slot-filled" style="background:rgba(200,164,90,0.25)"><div class="slot-name">Tout-petits</div><div class="slot-desc">Premiers apprentissages</div></div></div>
+
+        <div class="planning-time"><span>10h30<br>11h15</span></div>
+        <div class="planning-slot"><div class="slot-filled"><div class="slot-name">⭐ Cours ado B</div><div class="slot-desc">Obéissance avancée</div></div></div>
+        <div class="planning-slot"><div class="slot-filled"><div class="slot-name">Confirmés</div><div class="slot-desc">Niveau avancé</div></div></div>
+        <div class="planning-slot"><div class="slot-filled"><div class="slot-name">Expérimentés</div><div class="slot-desc">Agility & obérythmée</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURS DÉTAILLÉS -->
+<section id="cours">
+  <div class="section-inner">
+    <div class="fade-in">
+      <span class="section-label">Nos disciplines</span>
+      <h2 class="section-title">Les cours en détail</h2>
+      <p class="section-sub">Chaque cours est adapté à l'âge, au niveau et aux capacités de chaque chien. Les groupes sont constitués par les moniteurs selon leur évaluation.</p>
+    </div>
+    <div class="cours-grid">
+      <div class="cours-card fade-in">
+        <div class="cours-card-top"><span class="cours-icon">🐣</span><span class="cours-tag">Dès 2 mois</span></div>
+        <h3>École du chiot</h3>
+        <p class="cours-desc">Socialisation et premiers apprentissages pour les tout-petits. Découverte de l'environnement, rencontres avec les autres chiens, bases de l'obéissance et de la marche en laisse. Le meilleur moment pour démarrer !</p>
+        <p class="cours-niveau">💡 Plus tôt on commence, plus vite le chien apprend.</p>
+        <div class="cours-horaire"><div class="cours-dot"></div>Samedi 9h45 – 10h30</div>
+      </div>
+      <div class="cours-card fade-in" style="transition-delay:0.08s">
+        <div class="cours-card-top"><span class="cours-icon">🎯</span><span class="cours-tag">Débutants</span></div>
+        <h3>Cours ado A</h3>
+        <p class="cours-desc">Pour les chiens de 8 mois et plus qui débutent leur éducation. Marche en laisse, assis, couché, debout, rappel. La base d'une relation harmonieuse entre maître et chien, posée progressivement.</p>
+        <p class="cours-niveau">💡 Pour les non-confirmés et ceux qui reprennent.</p>
+        <div class="cours-horaire"><div class="cours-dot"></div>Samedi 9h – 9h45</div>
+      </div>
+      <div class="cours-card fade-in" style="transition-delay:0.16s">
+        <div class="cours-card-top"><span class="cours-icon">⭐</span><span class="cours-tag">Confirmés</span></div>
+        <h3>Cours ado B</h3>
+        <p class="cours-desc">Pour les binômes qui ont acquis les bases et souhaitent aller plus loin. Exercices plus complexes, précision, autonomie. Ce cours ouvre également la porte à l'agility et à l'obérythmée.</p>
+        <p class="cours-niveau">💡 Sur décision des moniteurs après évaluation.</p>
+        <div class="cours-horaire"><div class="cours-dot"></div>Samedi 10h30 – 11h15</div>
+      </div>
+      <div class="cours-card fade-in" style="transition-delay:0.24s">
+        <div class="cours-card-top"><span class="cours-icon">🏃</span><span class="cours-tag">Sport</span></div>
+        <h3>Agility</h3>
+        <p class="cours-desc">Parcours d'obstacles à réaliser dans un temps donné avec le minimum de fautes. Sauts, tunnels, slaloms... Une activité sportive, ludique et très fédératrice pour les duos les plus motivés !</p>
+        <p class="cours-niveau">💡 Accessible après validation par les moniteurs.</p>
+        <div class="cours-horaire"><div class="cours-dot"></div>Samedi matin</div>
+      </div>
+      <div class="cours-card fade-in" style="transition-delay:0.32s">
+        <div class="cours-card-top"><span class="cours-icon">🎵</span><span class="cours-tag">Original</span></div>
+        <h3>Obérythmée</h3>
+        <p class="cours-desc">Discipline sportive et artistique alliant obéissance et musique. Le maître et son chien réalisent une chorégraphie sur un accompagnement musical, présentée devant un public. Original et spectaculaire !</p>
+        <p class="cours-niveau">💡 Sur demande, sous réserve d'acceptation des moniteurs.</p>
+        <div class="cours-horaire"><div class="cours-dot"></div>Samedi matin</div>
+      </div>
+      <div class="cours-card fade-in" style="transition-delay:0.4s">
+        <div class="cours-card-top"><span class="cours-icon">🎓</span><span class="cours-tag">Annuel</span></div>
+        <h3>CAESC</h3>
+        <p class="cours-desc">Le Certificat d'Aptitude à l'Éducation Sociale du Chien valide les acquis du binôme. Durée : 15 minutes devant jury. Épreuves : marche en laisse et sans laisse, assis, couché, debout. Session annuelle.</p>
+        <p class="cours-niveau">💡 Ouvert à tous les membres du club.</p>
+        <div class="cours-horaire"><div class="cours-dot"></div>Session annuelle</div>
+      </div>
+    </div>
+    <div style="background:var(--vert-pale);border-radius:var(--radius);padding:1.2rem 1.6rem;margin-top:1.5rem;font-size:0.88rem;color:var(--vert);line-height:1.7;">
+      📌 <strong>Important :</strong> C'est toujours les moniteurs qui décident du passage d'un cours à l'autre, selon leur évaluation de chaque binôme. Si vous souhaitez pratiquer une discipline spécifique (agility, obérythmée), faites-en la demande — les moniteurs évalueront si votre chien est prêt.
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section id="tarifs">
+  <div class="section-inner">
+    <div class="fade-in">
+      <span class="section-label">Adhésion</span>
+      <h2 class="section-title">Tarifs & inscription</h2>
+      <p class="section-sub">Une cotisation inchangée depuis plus de 20 ans, parce que l'éducation canine doit rester accessible à tous.</p>
+    </div>
+    <div class="tarifs-grid">
+      <div>
+        <div class="tarifs-card fade-in" style="transition-delay:0.1s">
+          <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--vert);margin-bottom:1rem;">Cotisations annuelles</div>
+          <div class="tarif-row">
+            <span class="tarif-label">1 maître · 1 chien</span>
+            <span class="tarif-prix">105 €</span>
+          </div>
+          <div class="tarif-row">
+            <span class="tarif-label">2e chien</span>
+            <span class="tarif-prix">+ 20 €</span>
+          </div>
+          <div class="tarif-row">
+            <span class="tarif-label">Cotisation familiale<small>2 maîtres + 2 chiens</small></span>
+            <span class="tarif-prix">155 €</span>
+          </div>
+        </div>
+        <div class="tarif-note fade-in" style="transition-delay:0.15s">
+          ℹ️ L'adhésion devient effective après agrément du bureau et paiement de la cotisation. Les vaccins et une attestation d'assurance responsabilité civile sont à fournir.
+        </div>
+      </div>
+      <div class="seances-card fade-in" style="transition-delay:0.1s">
+        <div class="big-emoji">🎁</div>
+        <h3>2 séances gratuites</h3>
+        <p>Avant de vous engager, venez essayer ! Nous vous proposons deux séances d'essai gratuites pour voir si les cours correspondent à vos attentes et à celles de votre chien.</p>
+        <a href="index.html#contact" style="display:inline-block;margin-top:1.5rem;background:var(--blanc);color:var(--vert);padding:12px 24px;border-radius:50px;font-weight:700;font-size:0.9rem;text-decoration:none;">Réserver mes séances →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTS -->
+<section id="docs">
+  <div class="section-inner">
+    <div class="fade-in">
+      <span class="section-label">Documents</span>
+      <h2 class="section-title">Documents utiles</h2>
+      <p class="section-sub">Téléchargez et complétez ces documents avant votre première venue.</p>
+    </div>
+    <div class="docs-grid">
+      <a href="#" class="doc-card fade-in">
+        <span class="doc-icon">📄</span>
+        <div>
+          <div class="doc-name">Feuille d'adhésion</div>
+          <div class="doc-desc">Formulaire d'inscription pour le maître et le chien. À remettre complété avec les documents annexes.</div>
+        </div>
+      </a>
+      <a href="#" class="doc-card fade-in" style="transition-delay:0.08s">
+        <span class="doc-icon">📋</span>
+        <div>
+          <div class="doc-name">Règlement du terrain</div>
+          <div class="doc-desc">Protocole d'utilisation du terrain et règles de vie du club. À lire avant votre première séance.</div>
+        </div>
+      </a>
+    </div>
+    <div style="background:var(--vert-pale);border-radius:var(--radius);padding:1.2rem 1.6rem;margin-top:1.2rem;font-size:0.88rem;color:var(--vert);line-height:1.7;">
+      📎 <strong>Documents à joindre à l'adhésion :</strong> photocopie des vaccins (antirabique fortement conseillé), attestation d'assurance responsabilité civile, carte d'identification du chien. Les points 1 et 2 sont à renouveler chaque année.
+    </div>
+  </div>
+</section>
+
+<!-- INSCRIPTION -->
+<section id="inscription" style="background:var(--nuit);">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;" class="inscription-grid">
+      <div class="fade-in">
+        <span class="section-label" style="background:rgba(255,255,255,0.15);color:var(--blanc);">Comment s'inscrire</span>
+        <h2 class="section-title" style="color:var(--blanc);">C'est simple !</h2>
+        <div class="steps" style="margin-top:2rem;">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4 style="color:var(--blanc);">Contactez-nous</h4>
+              <p style="color:rgba(255,255,255,0.65);">Appelez Sandrine au 06 72 59 19 18 ou écrivez-nous par email. On vous explique tout.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4 style="color:var(--blanc);">Venez essayer gratuitement</h4>
+              <p style="color:rgba(255,255,255,0.65);">Deux séances d'essai offertes pour voir si le club vous convient, à vous et à votre chien.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4 style="color:var(--blanc);">Finalisez l'adhésion</h4>
+              <p style="color:rgba(255,255,255,0.65);">Remettez la feuille d'adhésion complétée avec les documents et payez la cotisation annuelle.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4 style="color:var(--blanc);">Bienvenue au CECB !</h4>
+              <p style="color:rgba(255,255,255,0.65);">Rendez-vous chaque samedi matin sur le terrain. N'oubliez pas les friandises pour votre chien 🐾</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in" style="transition-delay:0.15s">
+        <div class="contact-box">
+          <h3>Nous contacter</h3>
+          <div class="contact-item">
+            <span class="ci">📞</span>
+            <div><div class="ci-label">Téléphone</div><div class="ci-val"><a href="tel:0672591918">06 72 59 19 18</a></div></div>
+          </div>
+          <div class="contact-item">
+            <span class="ci">☎️</span>
+            <div><div class="ci-label">Fixe</div><div class="ci-val"><a href="tel:0254372195">02 54 37 21 95</a></div></div>
+          </div>
+          <div class="contact-item">
+            <span class="ci">✉️</span>
+            <div><div class="ci-label">Email</div><div class="ci-val"><a href="mailto:cecb36300@laposte.net">cecb36300@laposte.net</a></div></div>
+          </div>
+          <div class="contact-item">
+            <span class="ci">📍</span>
+            <div><div class="ci-label">Adresse</div><div class="ci-val">ZI des Groges, route de Concremiers<br>36300 Le Blanc</div></div>
+          </div>
+        </div>
+        <div class="map-placeholder" style="background:rgba(255,255,255,0.05);border:1px dashed rgba(255,255,255,0.15);border-radius:12px;padding:1.5rem;text-align:center;margin-top:1rem;">
+          <span class="map-icon">🗺️</span>
+          <p style="color:rgba(255,255,255,0.55);font-size:0.85rem;margin-bottom:0.8rem;">ZI des Groges · Route de Concremiers<br>36300 Le Blanc</p>
+          <a href="https://maps.google.com/?q=ZI+des+Groges+route+de+Concremiers+36300+Le+Blanc" target="_blank" class="map-link">📍 Voir sur Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>Club d'Éducation Canine Blancois</strong> — ZI des Groges, 36300 Le Blanc &nbsp;·&nbsp; <a href="mailto:cecb36300@laposte.net" style="color:rgba(255,255,255,0.6);">cecb36300@laposte.net</a></p>
+  <p style="margin-top:10px;"><a href="https://www.facebook.com/clubcaninboncelles" target="_blank" style="color:rgba(255,255,255,0.75);font-weight:700;text-decoration:none;background:rgba(255,255,255,0.1);padding:6px 16px;border-radius:50px;font-size:0.82rem;">📘 Suivez-nous sur Facebook</a></p>
+  <p style="margin-top:10px;font-size:0.75rem;">Site réalisé par <strong>clarté studio</strong> — Clarisse Denis</p>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

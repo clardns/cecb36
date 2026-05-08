@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photos — Club d'Éducation Canine Blancois CECB36</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --vert:#4a8c5e; --vert-clair:#5fa674; --vert-pale:#d9ead0;
+      --ocre:#c8a45a; --creme:#f5f2ea; --nuit:#1a2e22;
+      --blanc:#ffffff; --texte:#1a1a1a; --gris:#6a5f4e;
+      --ombre:rgba(0,0,0,0.07); --radius:16px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Nunito',sans-serif;background:var(--creme);color:var(--texte);overflow-x:hidden;}
+
+    header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,242,234,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--vert-pale);padding:0 2rem;}
+    nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:70px;}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .nav-links{display:flex;gap:2rem;list-style:none;}
+    .nav-links a{text-decoration:none;color:var(--texte);font-weight:600;font-size:0.9rem;transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--vert);}
+    .nav-cta{background:var(--vert)!important;color:var(--blanc)!important;padding:10px 20px;border-radius:50px;}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--texte);border-radius:2px;}
+
+    section{padding:5rem 2rem;}
+    .section-inner{max-width:1100px;margin:0 auto;}
+    .section-label{display:inline-block;background:var(--vert-pale);color:var(--vert);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:1rem;}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.25;margin-bottom:1rem;}
+    .section-sub{font-size:1rem;color:var(--gris);line-height:1.7;max-width:660px;}
+
+    .page-hero{padding:130px 2rem 4rem;background:linear-gradient(135deg,rgba(74,140,94,0.12) 0%,transparent 60%),var(--creme);}
+    .page-hero-inner{max-width:1100px;margin:0 auto;}
+    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4vw,3.6rem);line-height:1.15;margin-bottom:1.2rem;}
+    .page-hero h1 em{color:var(--vert);font-style:italic;}
+    .page-hero p{font-size:1.05rem;color:var(--gris);line-height:1.75;max-width:600px;}
+
+    /* FILTRES */
+    .filtres{display:flex;gap:0.8rem;flex-wrap:wrap;margin:2.5rem 0 1.5rem;}
+    .filtre-btn{padding:8px 20px;border-radius:50px;border:1.5px solid var(--vert-pale);background:var(--blanc);color:var(--gris);font-size:0.85rem;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:'Nunito',sans-serif;}
+    .filtre-btn:hover,.filtre-btn.active{background:var(--vert);color:var(--blanc);border-color:var(--vert);}
+
+    /* GALERIE MASONRY */
+    .galerie-section{margin-bottom:3rem;}
+    .galerie-section-title{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--texte);margin-bottom:1.2rem;display:flex;align-items:center;gap:10px;}
+    .galerie-section-title::after{content:'';flex:1;height:1px;background:var(--vert-pale);}
+
+    .galerie-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+    .galerie-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+    .galerie-grid-featured{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:1rem;}
+
+    .photo-slot{background:var(--vert-pale);border-radius:var(--radius);aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;color:var(--vert);font-size:0.78rem;font-weight:600;border:1.5px dashed var(--vert-clair);text-align:center;transition:transform 0.2s,box-shadow 0.2s;cursor:pointer;overflow:hidden;position:relative;}
+    .photo-slot:hover{transform:scale(1.02);box-shadow:0 8px 24px rgba(74,140,94,0.2);}
+    .photo-slot .ph-icon{font-size:2rem;}
+    .photo-slot.tall{aspect-ratio:3/4;}
+    .photo-slot.wide{aspect-ratio:16/9;}
+    .photo-slot.featured{grid-column:span 1;grid-row:span 2;aspect-ratio:unset;min-height:300px;}
+
+    /* CTA FB */
+    .fb-band{background:var(--nuit);border-radius:24px;padding:2.5rem;text-align:center;margin-top:3rem;}
+    .fb-band h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--blanc);margin-bottom:0.8rem;}
+    .fb-band p{font-size:0.9rem;color:rgba(255,255,255,0.7);line-height:1.65;margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto;}
+    .btn-fb{display:inline-flex;align-items:center;gap:8px;background:#1877f2;color:var(--blanc);padding:12px 28px;border-radius:50px;text-decoration:none;font-weight:700;font-size:0.95rem;transition:all 0.2s;}
+    .btn-fb:hover{background:#1463cc;transform:translateY(-2px);}
+
+    footer{background:var(--nuit);color:rgba(255,255,255,0.6);text-align:center;padding:2rem;font-size:0.82rem;}
+    footer strong{color:rgba(255,255,255,0.9);}
+
+    .fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-in.visible{opacity:1;transform:none;}
+
+    @media(max-width:768px){
+      .nav-links{display:none;}
+      .nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--creme);padding:1.5rem 2rem;border-bottom:1px solid var(--vert-pale);gap:1.2rem;}
+      .hamburger{display:flex;}
+      .galerie-grid-3,.galerie-grid-4,.galerie-grid-featured{grid-template-columns:1fr 1fr;}
+      .photo-slot.featured{grid-column:span 2;grid-row:span 1;min-height:200px;}
+      section{padding:3.5rem 1.5rem;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">
+      <div style="display:flex;flex-direction:column;line-height:1.1;">
+        <span style="font-family:Georgia,serif;font-size:1.55rem;font-weight:700;color:#4a8c5e;letter-spacing:-0.5px;">CECB</span>
+        <div style="height:2px;background:#c8a45a;margin:3px 0 4px;"></div>
+        <span style="font-family:Arial,sans-serif;font-size:0.62rem;font-weight:600;color:#5a5040;letter-spacing:0.12em;text-transform:uppercase;">Club d'Éducation Canine Blancois</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="le-club.html">Le club</a></li>
+      <li><a href="cours-horaires.html">Cours & horaires</a></li>
+      <li><a href="photos.html" class="active">Photos</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Nous contacter</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner fade-in">
+    <span class="section-label">Notre vie de club</span>
+    <h1>Le CECB <em>en images</em></h1>
+    <p style="margin-top:1.2rem;">Séances du samedi, passages du CAESC, moments de complicité entre maîtres et chiens... Bienvenue dans les coulisses du club !</p>
+  </div>
+</div>
+
+<!-- GALERIE -->
+<section>
+  <div class="section-inner">
+
+    <!-- Filtres -->
+    <div class="filtres fade-in">
+      <button class="filtre-btn active" onclick="filtrer(this,'tous')">Tout voir</button>
+      <button class="filtre-btn" onclick="filtrer(this,'seances')">🎯 Séances</button>
+      <button class="filtre-btn" onclick="filtrer(this,'agility')">🏃 Agility</button>
+      <button class="filtre-btn" onclick="filtrer(this,'oberythmee')">🎵 Obérythmée</button>
+      <button class="filtre-btn" onclick="filtrer(this,'caesc')">🎓 CAESC</button>
+      <button class="filtre-btn" onclick="filtrer(this,'evenements')">🎉 Événements</button>
+    </div>
+
+    <!-- Séances -->
+    <div class="galerie-section fade-in" data-cat="seances">
+      <div class="galerie-section-title">🎯 Séances du samedi</div>
+      <div class="galerie-grid-featured">
+        <div class="photo-slot featured"><span class="ph-icon">📸</span><span>Photo principale<br>séance</span></div>
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>Photo 2</span></div>
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>Photo 3</span></div>
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>Photo 4</span></div>
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>Photo 5</span></div>
+      </div>
+    </div>
+
+    <!-- Agility -->
+    <div class="galerie-section fade-in" data-cat="agility">
+      <div class="galerie-section-title">🏃 Agility</div>
+      <div class="galerie-grid-3">
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>Photo agility 1</span></div>
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>Photo agility 2</span></div>
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>Photo agility 3</span></div>
+      </div>
+    </div>
+
+    <!-- Obérythmée -->
+    <div class="galerie-section fade-in" data-cat="oberythmee">
+      <div class="galerie-section-title">🎵 Obérythmée</div>
+      <div class="galerie-grid-3">
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>Photo obérythmée 1</span></div>
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>Photo obérythmée 2</span></div>
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>Photo obérythmée 3</span></div>
+      </div>
+    </div>
+
+    <!-- CAESC -->
+    <div class="galerie-section fade-in" data-cat="caesc">
+      <div class="galerie-section-title">🎓 CAESC — Sessions annuelles</div>
+      <div class="galerie-grid-4">
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>CAESC 1</span></div>
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>CAESC 2</span></div>
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>CAESC 3</span></div>
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>CAESC 4</span></div>
+      </div>
+    </div>
+
+    <!-- Événements -->
+    <div class="galerie-section fade-in" data-cat="evenements">
+      <div class="galerie-section-title">🎉 Événements & fêtes</div>
+      <div class="galerie-grid-3">
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>Fête de Noël</span></div>
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>Événement 2</span></div>
+        <div class="photo-slot"><span class="ph-icon">📸</span><span>Événement 3</span></div>
+      </div>
+    </div>
+
+    <!-- CTA Facebook -->
+    <div class="fb-band fade-in">
+      <h3>📘 Encore plus de photos sur Facebook</h3>
+      <p>Rejoignez notre groupe privé réservé aux adhérents pour voir toutes les photos des séances, les coulisses et la vie du club au quotidien.</p>
+      <a href="https://www.facebook.com/clubcaninboncelles" target="_blank" class="btn-fb">📘 Voir la page Facebook</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>Club d'Éducation Canine Blancois</strong> — ZI des Groges, 36300 Le Blanc &nbsp;·&nbsp; <a href="mailto:cecb36300@laposte.net" style="color:rgba(255,255,255,0.6);">cecb36300@laposte.net</a></p>
+  <p style="margin-top:10px;"><a href="https://www.facebook.com/clubcaninboncelles" target="_blank" style="color:rgba(255,255,255,0.75);font-weight:700;text-decoration:none;background:rgba(255,255,255,0.1);padding:6px 16px;border-radius:50px;font-size:0.82rem;">📘 Suivez-nous sur Facebook</a></p>
+  <p style="margin-top:10px;font-size:0.75rem;">Site réalisé par <strong>clarté studio</strong> — Clarisse Denis</p>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  function filtrer(btn, cat) {
+    document.querySelectorAll('.filtre-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.galerie-section').forEach(s => {
+      if (cat === 'tous' || s.dataset.cat === cat) {
+        s.style.display = 'block';
+      } else {
+        s.style.display = 'none';
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

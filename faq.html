@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ — Club d'Éducation Canine Blancois CECB36</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --vert:#4a8c5e; --vert-clair:#5fa674; --vert-pale:#d9ead0;
+      --ocre:#c8a45a; --creme:#f5f2ea; --nuit:#1a2e22;
+      --blanc:#ffffff; --texte:#1a1a1a; --gris:#6a5f4e;
+      --ombre:rgba(0,0,0,0.07); --radius:16px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Nunito',sans-serif;background:var(--creme);color:var(--texte);overflow-x:hidden;}
+
+    header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,242,234,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--vert-pale);padding:0 2rem;}
+    nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:70px;}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .nav-links{display:flex;gap:2rem;list-style:none;}
+    .nav-links a{text-decoration:none;color:var(--texte);font-weight:600;font-size:0.9rem;transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--vert);}
+    .nav-cta{background:var(--vert)!important;color:var(--blanc)!important;padding:10px 20px;border-radius:50px;}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--texte);border-radius:2px;}
+
+    section{padding:5rem 2rem;}
+    .section-inner{max-width:800px;margin:0 auto;}
+    .section-label{display:inline-block;background:var(--vert-pale);color:var(--vert);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:1rem;}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.25;margin-bottom:1rem;}
+
+    .page-hero{padding:130px 2rem 4rem;background:linear-gradient(135deg,rgba(74,140,94,0.12) 0%,transparent 60%),var(--creme);}
+    .page-hero-inner{max-width:800px;margin:0 auto;}
+    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4vw,3.6rem);line-height:1.15;margin-bottom:1.2rem;}
+    .page-hero h1 em{color:var(--vert);font-style:italic;}
+
+    /* CATÉGORIES FAQ */
+    .faq-cat{margin-bottom:3rem;}
+    .faq-cat-title{display:flex;align-items:center;gap:12px;font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--texte);margin-bottom:1.2rem;padding-bottom:0.8rem;border-bottom:2px solid var(--vert-pale);}
+    .faq-cat-icon{width:40px;height:40px;border-radius:10px;background:var(--vert-pale);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+
+    /* ACCORDÉON */
+    .faq-item{background:var(--blanc);border-radius:var(--radius);border:1.5px solid var(--vert-pale);margin-bottom:0.8rem;overflow:hidden;transition:box-shadow 0.2s;}
+    .faq-item:hover{box-shadow:0 4px 20px rgba(74,140,94,0.1);}
+    .faq-question{display:flex;align-items:center;justify-content:space-between;padding:1.3rem 1.6rem;cursor:pointer;gap:1rem;}
+    .faq-question span{font-weight:700;font-size:0.98rem;color:var(--texte);line-height:1.4;}
+    .faq-toggle{width:30px;height:30px;border-radius:50%;background:var(--vert-pale);color:var(--vert);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700;flex-shrink:0;transition:background 0.2s,transform 0.3s;}
+    .faq-item.open .faq-toggle{background:var(--vert);color:var(--blanc);transform:rotate(45deg);}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.2s;}
+    .faq-item.open .faq-answer{max-height:400px;padding:0 1.6rem 1.4rem;}
+    .faq-answer p{font-size:0.92rem;color:var(--gris);line-height:1.8;border-top:1px solid var(--vert-pale);padding-top:1rem;}
+    .faq-answer a{color:var(--vert);font-weight:600;text-decoration:none;}
+    .faq-answer a:hover{text-decoration:underline;}
+
+    /* CTA CONTACT */
+    .cta-contact{background:var(--vert);border-radius:24px;padding:3rem;text-align:center;margin-top:1rem;}
+    .cta-contact h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--blanc);margin-bottom:0.8rem;}
+    .cta-contact p{font-size:0.95rem;color:rgba(255,255,255,0.85);line-height:1.7;margin-bottom:1.8rem;max-width:400px;margin-left:auto;margin-right:auto;}
+    .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+    .btn-white{background:var(--blanc);color:var(--vert);padding:12px 28px;border-radius:50px;text-decoration:none;font-weight:700;font-size:0.95rem;transition:all 0.2s;}
+    .btn-white:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.15);}
+    .btn-outline{border:2px solid rgba(255,255,255,0.5);color:var(--blanc);padding:10px 28px;border-radius:50px;text-decoration:none;font-weight:700;font-size:0.95rem;transition:all 0.2s;}
+    .btn-outline:hover{background:rgba(255,255,255,0.15);}
+
+    footer{background:var(--nuit);color:rgba(255,255,255,0.6);text-align:center;padding:2rem;font-size:0.82rem;}
+    footer strong{color:rgba(255,255,255,0.9);}
+
+    .fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-in.visible{opacity:1;transform:none;}
+
+    @media(max-width:768px){
+      .nav-links{display:none;}
+      .nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--creme);padding:1.5rem 2rem;border-bottom:1px solid var(--vert-pale);gap:1.2rem;}
+      .hamburger{display:flex;}
+      section{padding:3.5rem 1.5rem;}
+      .cta-btns{flex-direction:column;align-items:center;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">
+      <div style="display:flex;flex-direction:column;line-height:1.1;">
+        <span style="font-family:Georgia,serif;font-size:1.55rem;font-weight:700;color:#4a8c5e;letter-spacing:-0.5px;">CECB</span>
+        <div style="height:2px;background:#c8a45a;margin:3px 0 4px;"></div>
+        <span style="font-family:Arial,sans-serif;font-size:0.62rem;font-weight:600;color:#5a5040;letter-spacing:0.12em;text-transform:uppercase;">Club d'Éducation Canine Blancois</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="le-club.html">Le club</a></li>
+      <li><a href="cours-horaires.html">Cours & horaires</a></li>
+      <li><a href="photos.html">Photos</a></li>
+      <li><a href="faq.html" class="active">FAQ</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Nous contacter</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner fade-in">
+    <span class="section-label">Questions fréquentes</span>
+    <h1>Vous vous posez<br>des <em>questions ?</em></h1>
+    <p style="margin-top:1.2rem;font-size:1.05rem;color:var(--gris);line-height:1.75;">Voici les réponses aux questions qu'on nous pose le plus souvent. Si vous ne trouvez pas ce que vous cherchez, n'hésitez pas à nous appeler directement !</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section>
+  <div class="section-inner">
+
+    <!-- Tarifs & inscription -->
+    <div class="faq-cat fade-in">
+      <div class="faq-cat-title"><div class="faq-cat-icon">💰</div>Tarifs & inscription</div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Combien coûte l'adhésion ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>La cotisation annuelle est de <strong>105€</strong> pour un maître et un chien, <strong>+20€</strong> pour un deuxième chien, et <strong>155€</strong> en cotisation familiale (2 maîtres + 2 chiens). Un tarif inchangé depuis plus de 20 ans, parce que le club reste avant tout une association bénévole accessible à tous.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Peut-on essayer avant de s'inscrire ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Oui ! Le club propose <strong>2 séances d'essai gratuites</strong> avant tout engagement. C'est le meilleur moyen de voir si les cours correspondent à vos attentes et à celles de votre chien. Contactez-nous pour convenir d'une date.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Quels documents faut-il fournir ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Pour finaliser votre adhésion, il faudra fournir : la feuille d'adhésion complétée, une photocopie des vaccins (vaccin antirabique fortement conseillé), une attestation d'assurance responsabilité civile et la carte d'identification de votre chien. Les vaccins et l'assurance sont à renouveler chaque année. Téléchargez la <a href="cours-horaires.html#docs">feuille d'adhésion ici</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chiens & niveaux -->
+    <div class="faq-cat fade-in" style="transition-delay:0.1s">
+      <div class="faq-cat-title"><div class="faq-cat-icon">🐶</div>Chiens & niveaux</div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>À quel âge peut-on commencer avec son chiot ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Dès <strong>2 mois</strong> ! L'école du chiot est spécialement conçue pour les tout-petits. Plus tôt on commence, mieux c'est — les chiots qui démarrent tôt progressent bien plus vite que ceux qui commencent à l'adolescence (entre 8 mois et 2 ans), période où les mauvaises habitudes sont déjà ancrées.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Est-ce que je vais y arriver ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Oui, absolument ! Avec de la <strong>persévérance</strong>, quelques minutes de travail par jour avec votre chien, beaucoup de <strong>bienveillance</strong> et de <strong>friandises</strong>, on y arrive. Ça prend plus de temps pour certains chiens, mais nos moniteurs bénévoles sont là pour vous accompagner à chaque étape, sans jugement.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Mon chien est adulte, est-ce trop tard ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Il n'est jamais trop tard ! Les groupes sont constitués selon le niveau de chaque chien, pas selon l'âge. Toutes les races et toutes les tailles sont acceptées. Si votre chien a pris de mauvaises habitudes, nos moniteurs sauront vous aider à les corriger progressivement.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Comment se décide le passage d'un niveau à l'autre ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>C'est toujours les <strong>moniteurs</strong> qui décident du passage d'un cours à l'autre, selon leur évaluation de chaque binôme maître-chien. Si vous souhaitez pratiquer une discipline spécifique (agility, obérythmée), faites-en la demande — ils évalueront si votre chien est prêt.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Les chiens agressifs sont-ils acceptés ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Si un chien montre des signes d'agressivité, le moniteur pourra lui faire quitter la séance ou lui demander le port d'une muselière. Parfois, un travail à distance ou individuel sera préconisé. Dans tous les cas, nous utilisons uniquement des méthodes bienveillantes — <strong>aucune brutalité n'est tolérée</strong> sur nos terrains.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Disciplines -->
+    <div class="faq-cat fade-in" style="transition-delay:0.2s">
+      <div class="faq-cat-title"><div class="faq-cat-icon">🎯</div>Disciplines & certifications</div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>C'est quoi l'obérythmée ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>L'obérythmée est une discipline sportive et artistique qui allie <strong>obéissance et musique</strong>. Le maître et son chien réalisent ensemble une chorégraphie sur un accompagnement musical, présentée devant un public. C'est ludique, spectaculaire et accessible après validation par les moniteurs.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>C'est quoi le CAESC ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Le <strong>Certificat d'Aptitude à l'Éducation Sociale du Chien</strong> valide les acquis d'un binôme maître-chien. L'examen dure environ 15 minutes devant un jury. Les épreuves : marche en laisse, marche sans laisse, assis, couché, debout. Une session est organisée chaque année — elle se termine par un goûter et un pot de l'amitié !</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pratique -->
+    <div class="faq-cat fade-in" style="transition-delay:0.3s">
+      <div class="faq-cat-title"><div class="faq-cat-icon">📍</div>Infos pratiques</div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Où se déroulent les séances ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Les séances ont lieu chaque <strong>samedi matin</strong> sur le site du club : <strong>ZI des Groges, route de Concremiers, à la sortie du Blanc (36300)</strong>. L'accès au terrain se fait uniquement avec un moniteur habilité. <a href="https://maps.google.com/?q=ZI+des+Groges+route+de+Concremiers+36300+Le+Blanc" target="_blank">Voir sur Google Maps →</a></p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Faut-il arriver à une heure précise ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Il est demandé d'arriver <strong>15 minutes avant le cours</strong> pour détendre votre chien. Aucun retard n'est admis : si un cours est commencé, un adhérent en retard ne pourra s'ajouter qu'exceptionnellement et avec l'accord du moniteur. N'oubliez pas d'apporter une motivation pour votre chien — friandise ou jouet !</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Les enfants peuvent-ils venir ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Les non-adhérents (famille, amis) peuvent assister aux séances depuis l'extérieur du terrain. Les enfants restent sous la responsabilité de leur parent. Les mineurs qui souhaitent conduire eux-mêmes leur chien doivent fournir une <strong>autorisation parentale</strong> — sous réserve d'acceptation par le Comité selon leur maîtrise du chien.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Ma chienne est en chaleurs, peut-elle venir ?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          <p>Non, les chiennes sous l'influence de leurs chaleurs <strong>ne sont pas admises en cours</strong>. Il faudra attendre la fin de la période avant de reprendre les séances.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA contact -->
+    <div class="cta-contact fade-in">
+      <h3>Vous n'avez pas trouvé votre réponse ?</h3>
+      <p>N'hésitez pas à nous contacter directement — Sandrine et l'équipe répondent à toutes vos questions avec plaisir !</p>
+      <div class="cta-btns">
+        <a href="tel:0672591918" class="btn-white">📞 06 72 59 19 18</a>
+        <a href="mailto:cecb36300@laposte.net" class="btn-outline">✉️ Envoyer un email</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>Club d'Éducation Canine Blancois</strong> — ZI des Groges, 36300 Le Blanc &nbsp;·&nbsp; <a href="mailto:cecb36300@laposte.net" style="color:rgba(255,255,255,0.6);">cecb36300@laposte.net</a></p>
+  <p style="margin-top:10px;"><a href="https://www.facebook.com/clubcaninboncelles" target="_blank" style="color:rgba(255,255,255,0.75);font-weight:700;text-decoration:none;background:rgba(255,255,255,0.1);padding:6px 16px;border-radius:50px;font-size:0.82rem;">📘 Suivez-nous sur Facebook</a></p>
+  <p style="margin-top:10px;font-size:0.75rem;">Site réalisé par <strong>clarté studio</strong> — Clarisse Denis</p>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
