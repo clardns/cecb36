@@ -24,6 +24,8 @@ body{font-family:'Inter',system-ui,sans-serif;background:#fdfcf9;color:#0d1a10;l
 
 .hov{transition:box-shadow .22s,border-color .22s,transform .22s;}
 .hov:hover{box-shadow:0 8px 32px rgba(45,106,63,.12);border-color:#3d8a52!important;transform:translateY(-3px);}
+.rh{transition:background .18s;}
+.rh:hover{background:#f4faf6!important;}
 
 .btn{display:inline-flex;align-items:center;gap:7px;padding:13px 26px;border-radius:50px;font-size:.88rem;font-weight:600;text-decoration:none;transition:all .22s;border:none;cursor:pointer;font-family:inherit;letter-spacing:-.01em;}
 .btn-g{background:#2d6a3f;color:#fff;}
@@ -33,6 +35,8 @@ body{font-family:'Inter',system-ui,sans-serif;background:#fdfcf9;color:#0d1a10;l
 .btn-lg{padding:15px 32px;font-size:.95rem;}
 .btn-w{background:#fff;color:#2d6a3f;font-weight:700;}
 .btn-w:hover{background:#f4faf6;transform:translateY(-1px);}
+.btn-dim{background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.3);}
+.btn-dim:hover{background:rgba(255,255,255,.25);transform:translateY(-1px);}
 
 .pill{display:inline-flex;align-items:center;gap:5px;font-size:.67rem;font-weight:600;padding:5px 13px;border-radius:50px;letter-spacing:.05em;text-transform:uppercase;}
 .pill-g{background:#eaf4ed;color:#2d6a3f;}
@@ -51,9 +55,6 @@ nav a:hover,.non{color:#0d1a10!important;}
 .fq[data-open="1"] .fq-i{transform:rotate(45deg);background:#2d6a3f;color:#fff;}
 .fq-a{display:none;padding-bottom:1rem;font-size:.86rem;color:#4a6450;line-height:1.8;}
 
-.rh{transition:background .18s;}
-.rh:hover{background:#f4faf6!important;}
-
 footer{background:#0d1a10;padding:4rem 3rem 2.5rem;}
 .ft{max-width:1140px;margin:0 auto;}
 </style>
@@ -67,7 +68,7 @@ footer{background:#0d1a10;padding:4rem 3rem 2.5rem;}
   <nav><ul><li><a href="le-club.html" class="non">Le club</a></li><li><a href="cours-horaires.html" class="">Cours & horaires</a></li><li><a href="photos.html" class="">Photos</a></li><li><a href="faq.html" class="">FAQ</a></li><li><a href="contact.html" class="btn btn-g" style="font-size:.8rem;padding:8px 18px;">Contact</a></li></ul></nav>
 </div></header>
 
-<section style="padding:7rem 3rem;background:linear-gradient(160deg,#f4faf6 0%,#fdfcf9 65%);">
+<section style="padding:6rem 3rem;background:linear-gradient(160deg,#f4faf6 0%,#fdfcf9 65%);">
   <div style="max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
     <div>
       <div data-r="x-"><span class="pill pill-g" style="margin-bottom:1rem;">Notre association</span></div>
@@ -77,52 +78,48 @@ footer{background:#0d1a10;padding:4rem 3rem 2.5rem;}
     <div data-r="x+"><div style="background:#f4faf6;border-radius:20px;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;color:#3d8a52;font-size:.85rem;font-weight:500;border:2px dashed #b4d9bf;text-align:center;"><span style="font-size:2.5rem;">📸</span><span>Photo du club à venir</span></div></div>
   </div>
 </section>
-
-<section style="padding:7rem 3rem;background:#ffffff;">
+<section style="padding:6rem 3rem;background:#ffffff;">
   <div style="max-width:1140px;margin:0 auto;">
-    <div style="max-width:700px;margin-bottom:3.5rem;">
+    <div style="max-width:680px;margin-bottom:3rem;">
       <div data-r="y"><span class="pill pill-g" style="margin-bottom:1rem;">Notre philosophie</span></div>
       <h2 data-r="y" data-delay=".07" style="font-size:clamp(2.2rem,3.5vw,3rem);font-weight:800;letter-spacing:-.04em;color:#0d1a10;margin-bottom:1.2rem;"><span class="sib">L'éducation positive du chien</span></h2>
       <p data-r="y" data-delay=".12" style="font-size:.97rem;color:#4a6450;line-height:1.9;margin-bottom:.9rem;">L'éducation du chien n'est pas une science exacte, ni une technique — c'est le résultat de la construction d'un <strong style="color:#0d1a10;font-weight:600;">lien unique entre le chien et son maître</strong>.</p>
       <p data-r="y" data-delay=".17" style="font-size:.97rem;color:#4a6450;line-height:1.9;margin-bottom:.9rem;">Au club, nous pratiquons l'éducation positive : un principe basé sur le respect et l'écoute de l'animal, qui respecte son état émotionnel, mental et physique.</p>
       <p data-r="y" data-delay=".22" style="font-size:.97rem;color:#4a6450;line-height:1.9;">Le principe est de <strong style="color:#0d1a10;font-weight:600;">renforcer les bons comportements en ignorant les mauvais</strong>. L'éducation s'appuie sur la récompense et l'encouragement par la voix.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
-      <div class="hov" data-r="y" style="background:#f4faf6;border:1.5px solid #eaf4ed;border-radius:20px;padding:1.5rem;"><span style="font-size:1.7rem;display:block;margin-bottom:.8rem;">🤝</span><div style="font-size:.95rem;font-weight:600;color:#0d1a10;margin-bottom:.4rem;">Respect de l'animal</div><p style="font-size:.83rem;color:#4a6450;line-height:1.65;">On respecte l'état émotionnel, mental et physique de chaque chien.</p></div>
-      <div class="hov" data-r="y" data-delay=".08" style="background:#fff8f0;border:1.5px solid #fef3e4;border-radius:20px;padding:1.5rem;"><span style="font-size:1.7rem;display:block;margin-bottom:.8rem;">🎁</span><div style="font-size:.95rem;font-weight:600;color:#0d1a10;margin-bottom:.4rem;">Récompense & encouragement</div><p style="font-size:.83rem;color:#4a6450;line-height:1.65;">On renforce ce qui va bien — jamais de punition, toujours de la bienveillance.</p></div>
-      <div class="hov" data-r="y" data-delay=".16" style="background:#f4faf6;border:1.5px solid #eaf4ed;border-radius:20px;padding:1.5rem;"><span style="font-size:1.7rem;display:block;margin-bottom:.8rem;">💚</span><div style="font-size:.95rem;font-weight:600;color:#0d1a10;margin-bottom:.4rem;">Complicité maître-chien</div><p style="font-size:.83rem;color:#4a6450;line-height:1.65;">L'objectif final : une relation harmonieuse et durable avec votre compagnon.</p></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+      <div class="hov" data-r="y" style="background:#f4faf6;border:1.5px solid #eaf4ed;border-radius:18px;padding:1.4rem;"><span style="font-size:1.6rem;display:block;margin-bottom:.7rem;">🤝</span><div style="font-size:.93rem;font-weight:600;color:#0d1a10;margin-bottom:.4rem;">Respect de l'animal</div><p style="font-size:.82rem;color:#4a6450;line-height:1.65;">On respecte l'état émotionnel, mental et physique de chaque chien.</p></div>
+      <div class="hov" data-r="y" data-delay=".08" style="background:#fff8f0;border:1.5px solid #fef3e4;border-radius:18px;padding:1.4rem;"><span style="font-size:1.6rem;display:block;margin-bottom:.7rem;">🎁</span><div style="font-size:.93rem;font-weight:600;color:#0d1a10;margin-bottom:.4rem;">Récompense & encouragement</div><p style="font-size:.82rem;color:#4a6450;line-height:1.65;">On renforce ce qui va bien — jamais de punition, toujours de la bienveillance.</p></div>
+      <div class="hov" data-r="y" data-delay=".16" style="background:#f4faf6;border:1.5px solid #eaf4ed;border-radius:18px;padding:1.4rem;"><span style="font-size:1.6rem;display:block;margin-bottom:.7rem;">💚</span><div style="font-size:.93rem;font-weight:600;color:#0d1a10;margin-bottom:.4rem;">Complicité maître-chien</div><p style="font-size:.82rem;color:#4a6450;line-height:1.65;">L'objectif final : une relation harmonieuse et durable avec votre compagnon.</p></div>
     </div>
   </div>
 </section>
-
-<section style="padding:7rem 3rem;background:#f4faf6;">
+<section style="padding:6rem 3rem;background:#f4faf6;">
   <div style="max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;">
     <div data-r="x-">
       <span class="pill pill-g" style="margin-bottom:1rem;">Histoire</span>
       <h2 style="font-size:clamp(2rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.04em;color:#0d1a10;margin-bottom:1.2rem;line-height:1.1;"><span class="sib">Plus de 35 ans</span><br>d'éducation canine</h2>
-      <p style="font-size:.95rem;color:#4a6450;line-height:1.9;margin-bottom:.9rem;">Le CECB est né en 1990 de la passion de bénévoles locaux. Depuis plus de 35 ans, le club accompagne les familles du Blanc dans la construction d'une relation harmonieuse avec leur compagnon.</p>
+      <p style="font-size:.95rem;color:#4a6450;line-height:1.9;margin-bottom:.9rem;">Le CECB est né en 1990 de la passion de bénévoles locaux. Depuis plus de 35 ans, le club accompagne les familles du Blanc dans la construction d'une relation harmonieuse.</p>
       <p style="font-size:.95rem;color:#4a6450;line-height:1.9;">Aujourd'hui, une <strong style="color:#0d1a10;font-weight:600;">quarantaine de membres</strong> se retrouvent chaque samedi — toutes races, toutes tailles, de 2 mois à l'âge adulte.</p>
     </div>
     <div data-r="x+" style="display:flex;flex-direction:column;gap:8px;">
-      <div style="display:flex;gap:12px;padding:1rem 1.2rem;background:#ffffff;border-radius:14px;border:1px solid #e3ebe4;border-left:3px solid #2d6a3f;align-items:flex-start;"><div style="width:40px;height:40px;border-radius:50%;background:#eaf4ed;color:#2d6a3f;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.73rem;flex-shrink:0;text-align:center;line-height:1.3;">1990</div><div><div style="font-size:.9rem;font-weight:600;color:#0d1a10;margin-bottom:2px;">Création du club</div><p style="font-size:.82rem;color:#4a6450;">Fondation par des bénévoles passionnés du Blanc.</p></div></div><div style="display:flex;gap:12px;padding:1rem 1.2rem;background:#ffffff;border-radius:14px;border:1px solid #e3ebe4;border-left:3px solid #2d6a3f;align-items:flex-start;"><div style="width:40px;height:40px;border-radius:50%;background:#eaf4ed;color:#2d6a3f;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.73rem;flex-shrink:0;text-align:center;line-height:1.3;">2000s</div><div><div style="font-size:.9rem;font-weight:600;color:#0d1a10;margin-bottom:2px;">Nouvelles disciplines</div><p style="font-size:.82rem;color:#4a6450;">Agility, obérythmée, hooper — sport et complicité.</p></div></div><div style="display:flex;gap:12px;padding:1rem 1.2rem;background:#ffffff;border-radius:14px;border:1px solid #e3ebe4;border-left:3px solid #b07434;align-items:flex-start;"><div style="width:40px;height:40px;border-radius:50%;background:#fef3e4;color:#b07434;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.73rem;flex-shrink:0;text-align:center;line-height:1.3;">Auj.</div><div><div style="font-size:.9rem;font-weight:600;color:#0d1a10;margin-bottom:2px;">~40 membres actifs</div><p style="font-size:.82rem;color:#4a6450;">Sandrine, Patrick et Linda animent le club chaque samedi.</p></div></div>
+      <div style="display:flex;gap:12px;padding:1rem 1.2rem;background:#ffffff;border-radius:13px;border:1px solid #e3ebe4;border-left:3px solid #2d6a3f;align-items:flex-start;"><div style="width:38px;height:38px;border-radius:50%;background:#eaf4ed;color:#2d6a3f;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.72rem;flex-shrink:0;text-align:center;line-height:1.3;">1990</div><div><div style="font-size:.9rem;font-weight:600;color:#0d1a10;margin-bottom:2px;">Création du club</div><p style="font-size:.81rem;color:#4a6450;">Fondation par des bénévoles passionnés du Blanc.</p></div></div><div style="display:flex;gap:12px;padding:1rem 1.2rem;background:#ffffff;border-radius:13px;border:1px solid #e3ebe4;border-left:3px solid #2d6a3f;align-items:flex-start;"><div style="width:38px;height:38px;border-radius:50%;background:#eaf4ed;color:#2d6a3f;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.72rem;flex-shrink:0;text-align:center;line-height:1.3;">2000s</div><div><div style="font-size:.9rem;font-weight:600;color:#0d1a10;margin-bottom:2px;">Nouvelles disciplines</div><p style="font-size:.81rem;color:#4a6450;">Agility, obérythmée, hooper — sport et complicité.</p></div></div><div style="display:flex;gap:12px;padding:1rem 1.2rem;background:#ffffff;border-radius:13px;border:1px solid #e3ebe4;border-left:3px solid #b07434;align-items:flex-start;"><div style="width:38px;height:38px;border-radius:50%;background:#fef3e4;color:#b07434;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.72rem;flex-shrink:0;text-align:center;line-height:1.3;">Auj.</div><div><div style="font-size:.9rem;font-weight:600;color:#0d1a10;margin-bottom:2px;">~40 membres actifs</div><p style="font-size:.81rem;color:#4a6450;">Sandrine, Patrick et Linda animent le club chaque samedi.</p></div></div>
     </div>
   </div>
 </section>
-
-<section style="padding:7rem 3rem;background:#ffffff;">
+<section style="padding:6rem 3rem;background:#ffffff;">
   <div style="max-width:1140px;margin:0 auto;">
     <div data-r="y" style="text-align:center;margin-bottom:2.5rem;">
       <span class="pill pill-g" style="margin-bottom:.8rem;">Les moniteurs</span>
       <h2 style="font-size:clamp(2rem,3vw,2.6rem);font-weight:800;letter-spacing:-.04em;color:#0d1a10;"><span class="sib">Une équipe bénévole et passionnée</span></h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
-      <div class="hov" data-r="y" data-delay="0" style="background:#fdfcf9;border:1.5px solid #e3ebe4;border-radius:22px;padding:1.8rem;text-align:center;"><div style="width:60px;height:60px;border-radius:50%;background:#eaf4ed;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto .9rem;">👩‍💼</div><div style="font-size:.95rem;font-weight:700;color:#0d1a10;margin-bottom:3px;">Sandrine Antigny</div><div style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#2d6a3f;margin-bottom:.7rem;">Présidente · Monitrice</div><p style="font-size:.82rem;color:#4a6450;line-height:1.65;">Présidente et monitrice passionnée, elle accueille chaque membre avec bienveillance.</p></div><div class="hov" data-r="y" data-delay="0.08" style="background:#fdfcf9;border:1.5px solid #e3ebe4;border-radius:22px;padding:1.8rem;text-align:center;"><div style="width:60px;height:60px;border-radius:50%;background:#eaf4ed;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto .9rem;">👨‍🏫</div><div style="font-size:.95rem;font-weight:700;color:#0d1a10;margin-bottom:3px;">Patrick</div><div style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#2d6a3f;margin-bottom:.7rem;">Moniteur bénévole</div><p style="font-size:.82rem;color:#4a6450;line-height:1.65;">Moniteur expérimenté, encadre les cours avec pédagogie et humour.</p></div><div class="hov" data-r="y" data-delay="0.16" style="background:#fdfcf9;border:1.5px solid #e3ebe4;border-radius:22px;padding:1.8rem;text-align:center;"><div style="width:60px;height:60px;border-radius:50%;background:#eaf4ed;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto .9rem;">👩‍🏫</div><div style="font-size:.95rem;font-weight:700;color:#0d1a10;margin-bottom:3px;">Linda</div><div style="font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#2d6a3f;margin-bottom:.7rem;">Monitrice bénévole</div><p style="font-size:.82rem;color:#4a6450;line-height:1.65;">Spécialisée dans l'accompagnement des chiots et chiens adolescents.</p></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+      <div class="hov" data-r="y" data-delay="0" style="background:#fdfcf9;border:1.5px solid #e3ebe4;border-radius:20px;padding:1.7rem;text-align:center;"><div style="width:58px;height:58px;border-radius:50%;background:#eaf4ed;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto .9rem;">👩‍💼</div><div style="font-size:.95rem;font-weight:700;color:#0d1a10;margin-bottom:3px;">Sandrine Antigny</div><div style="font-size:.64rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#2d6a3f;margin-bottom:.7rem;">Présidente · Monitrice</div><p style="font-size:.82rem;color:#4a6450;line-height:1.65;">Présidente et monitrice passionnée, elle accueille chaque membre avec bienveillance.</p></div><div class="hov" data-r="y" data-delay="0.08" style="background:#fdfcf9;border:1.5px solid #e3ebe4;border-radius:20px;padding:1.7rem;text-align:center;"><div style="width:58px;height:58px;border-radius:50%;background:#eaf4ed;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto .9rem;">👨‍🏫</div><div style="font-size:.95rem;font-weight:700;color:#0d1a10;margin-bottom:3px;">Patrick</div><div style="font-size:.64rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#2d6a3f;margin-bottom:.7rem;">Moniteur bénévole</div><p style="font-size:.82rem;color:#4a6450;line-height:1.65;">Moniteur expérimenté, encadre les cours avec pédagogie et humour.</p></div><div class="hov" data-r="y" data-delay="0.16" style="background:#fdfcf9;border:1.5px solid #e3ebe4;border-radius:20px;padding:1.7rem;text-align:center;"><div style="width:58px;height:58px;border-radius:50%;background:#eaf4ed;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto .9rem;">👩‍🏫</div><div style="font-size:.95rem;font-weight:700;color:#0d1a10;margin-bottom:3px;">Linda</div><div style="font-size:.64rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#2d6a3f;margin-bottom:.7rem;">Monitrice bénévole</div><p style="font-size:.82rem;color:#4a6450;line-height:1.65;">Spécialisée dans l'accompagnement des chiots et chiens adolescents.</p></div>
     </div>
-    <p style="text-align:center;font-size:.73rem;color:#4a6450;margin-top:1rem;opacity:.6;font-style:italic;">⚠️ Descriptions à valider avec Sandrine avant publication.</p>
+    <p style="text-align:center;font-size:.72rem;color:#4a6450;margin-top:1rem;opacity:.6;font-style:italic;">⚠️ Descriptions à valider avec Sandrine avant publication.</p>
   </div>
 </section>
-
-<section style="padding:7rem 3rem;background:#f4faf6;;text-align:center;">
+<section style="padding:6rem 3rem;background:#f4faf6;;text-align:center;">
   <div data-r="s" style="max-width:480px;margin:0 auto;">
     <h2 style="font-size:clamp(2rem,3vw,2.6rem);font-weight:800;letter-spacing:-.04em;color:#0d1a10;margin-bottom:.8rem;"><span class="sib">Prêt à rejoindre l'aventure ?</span></h2>
     <p style="font-size:.97rem;color:#4a6450;line-height:1.8;margin-bottom:1.5rem;">Sandrine vous accueillera avec plaisir le samedi matin.</p>
@@ -160,15 +157,12 @@ footer{background:#0d1a10;padding:4rem 3rem 2.5rem;}
 </div></footer>
 <script>
 function tFq(el){var o=el.getAttribute('data-open')==='1';document.querySelectorAll('.fq[data-open="1"]').forEach(function(f){f.setAttribute('data-open','0');f.querySelector('.fq-a').style.display='none';});if(!o){el.setAttribute('data-open','1');el.querySelector('.fq-a').style.display='block';}}
-function filtrer(b,c){document.querySelectorAll('.fb').forEach(function(x){x.style.cssText='padding:5px 14px;border-radius:50px;border:1px solid #e3ebe4;background:#ffffff;color:#4a6450;font-size:.76rem;font-weight:500;cursor:pointer;font-family:inherit;';});b.style.background='#2d6a3f';b.style.color='#fff';b.style.borderColor='#2d6a3f';document.querySelectorAll('.gs').forEach(function(s){s.style.display=(c==='tous'||s.dataset.cat===c)?'block':'none';});}
+function filtrer(b,c){document.querySelectorAll('.fb').forEach(function(x){x.style.cssText='padding:5px 14px;border-radius:50px;border:1px solid #e3ebe4;background:#ffffff;color:#4a6450;font-size:.77rem;font-weight:500;cursor:pointer;font-family:inherit;';});b.style.background='#2d6a3f';b.style.color='#fff';b.style.borderColor='#2d6a3f';document.querySelectorAll('.gs').forEach(function(s){s.style.display=(c==='tous'||s.dataset.cat===c)?'block':'none';});}
 (function(){
-  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var d=parseFloat(e.target.dataset.delay||0);setTimeout(function(){e.target.classList.add('vis');},d*1000);io.unobserve(e.target);}});},{threshold:.08,rootMargin:'0px 0px -20px 0px'});
-  var cio=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){animCounters(e.target);cio.unobserve(e.target);}});},{threshold:.4});
-  function animCounters(p){p.querySelectorAll('[data-count]').forEach(function(el){var t=parseFloat(el.dataset.count);var pre=el.dataset.prefix||'';var suf=el.dataset.suffix||'';var isF=t%1!==0;var dur=1400;var st=null;function step(ts){if(!st)st=ts;var prog=Math.min((ts-st)/dur,1);var ease=1-Math.pow(1-prog,4);var v=t*ease;el.textContent=pre+(isF?v.toFixed(1):Math.round(v))+suf;if(prog<1)requestAnimationFrame(step);}requestAnimationFrame(step);});}
-  document.addEventListener('DOMContentLoaded',function(){
-    document.querySelectorAll('[data-r]').forEach(function(el){io.observe(el);});
-    document.querySelectorAll('[data-cg]').forEach(function(el){cio.observe(el);});
-  });
+  var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){var d=parseFloat(x.target.dataset.delay||0);setTimeout(function(){x.target.classList.add('vis');},d*1000);io.unobserve(x.target);}});},{threshold:.08,rootMargin:'0px 0px -20px 0px'});
+  var cio=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){aC(x.target);cio.unobserve(x.target);}});},{threshold:.4});
+  function aC(p){p.querySelectorAll('[data-count]').forEach(function(el){var t=parseFloat(el.dataset.count),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'',isF=t%1!==0,st=null;function step(ts){if(!st)st=ts;var pr=Math.min((ts-st)/1400,1),ease=1-Math.pow(1-pr,4),v=t*ease;el.textContent=pre+(isF?v.toFixed(1):Math.round(v))+suf;if(pr<1)requestAnimationFrame(step);}requestAnimationFrame(step);});}
+  document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-r]').forEach(function(el){io.observe(el);});document.querySelectorAll('[data-cg]').forEach(function(el){cio.observe(el);});});
 })();
 </script>
 </body>

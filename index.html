@@ -24,6 +24,8 @@ body{font-family:'Inter',system-ui,sans-serif;background:#fdfcf9;color:#0d1a10;l
 
 .hov{transition:box-shadow .22s,border-color .22s,transform .22s;}
 .hov:hover{box-shadow:0 8px 32px rgba(45,106,63,.12);border-color:#3d8a52!important;transform:translateY(-3px);}
+.rh{transition:background .18s;}
+.rh:hover{background:#f4faf6!important;}
 
 .btn{display:inline-flex;align-items:center;gap:7px;padding:13px 26px;border-radius:50px;font-size:.88rem;font-weight:600;text-decoration:none;transition:all .22s;border:none;cursor:pointer;font-family:inherit;letter-spacing:-.01em;}
 .btn-g{background:#2d6a3f;color:#fff;}
@@ -33,6 +35,8 @@ body{font-family:'Inter',system-ui,sans-serif;background:#fdfcf9;color:#0d1a10;l
 .btn-lg{padding:15px 32px;font-size:.95rem;}
 .btn-w{background:#fff;color:#2d6a3f;font-weight:700;}
 .btn-w:hover{background:#f4faf6;transform:translateY(-1px);}
+.btn-dim{background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.3);}
+.btn-dim:hover{background:rgba(255,255,255,.25);transform:translateY(-1px);}
 
 .pill{display:inline-flex;align-items:center;gap:5px;font-size:.67rem;font-weight:600;padding:5px 13px;border-radius:50px;letter-spacing:.05em;text-transform:uppercase;}
 .pill-g{background:#eaf4ed;color:#2d6a3f;}
@@ -51,9 +55,6 @@ nav a:hover,.non{color:#0d1a10!important;}
 .fq[data-open="1"] .fq-i{transform:rotate(45deg);background:#2d6a3f;color:#fff;}
 .fq-a{display:none;padding-bottom:1rem;font-size:.86rem;color:#4a6450;line-height:1.8;}
 
-.rh{transition:background .18s;}
-.rh:hover{background:#f4faf6!important;}
-
 footer{background:#0d1a10;padding:4rem 3rem 2.5rem;}
 .ft{max-width:1140px;margin:0 auto;}
 </style>
@@ -67,195 +68,221 @@ footer{background:#0d1a10;padding:4rem 3rem 2.5rem;}
   <nav><ul><li><a href="le-club.html" class="">Le club</a></li><li><a href="cours-horaires.html" class="">Cours & horaires</a></li><li><a href="photos.html" class="">Photos</a></li><li><a href="faq.html" class="">FAQ</a></li><li><a href="contact.html" class="btn btn-g" style="font-size:.8rem;padding:8px 18px;">Contact</a></li></ul></nav>
 </div></header>
 
-<section style="padding:7rem 3rem;background:linear-gradient(160deg,#f4faf6 0%,#fdfcf9 65%);">
+<section style="padding:6rem 3rem;background:linear-gradient(160deg,#f4faf6 0%,#fdfcf9 65%);">
   <div style="max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:center;">
     <div>
       <div data-r="y" style="margin-bottom:1.4rem;"><span class="pill pill-g"><span style="width:6px;height:6px;background:#2d6a3f;border-radius:50%;display:inline-block;"></span>Club canin · Le Blanc · depuis 1990</span></div>
-      <h1 data-r="y" data-delay=".08" style="font-size:clamp(3rem,5.5vw,4.6rem);line-height:1.02;letter-spacing:-.04em;color:#0d1a10;margin-bottom:1.3rem;font-weight:800;">L'éducation canine<br><span class="sib" style="color:#2d6a3f;font-weight:700;">dans la bonne humeur</span></h1>
-      <p data-r="y" data-delay=".16" style="font-size:1.05rem;color:#4a6450;line-height:1.85;margin-bottom:2.2rem;max-width:440px;">Méthode naturelle et positive pour construire un lien unique entre vous et votre chien — depuis 1990 à Le Blanc, dans l'Indre.</p>
-      <div data-r="y" data-delay=".22" style="display:flex;gap:10px;flex-wrap:wrap;">
-        <a href="cours-horaires.html" class="btn btn-g btn-lg">Découvrir les cours →</a>
-        <a href="contact.html" class="btn btn-o btn-lg">Nous rejoindre</a>
+      <h1 data-r="y" data-delay=".08" style="font-size:clamp(3rem,5.5vw,4.4rem);line-height:1.02;letter-spacing:-.04em;color:#0d1a10;margin-bottom:1.2rem;font-weight:800;">L'éducation canine<br><span class="sib" style="color:#2d6a3f;">dans la bonne humeur</span></h1>
+      <p data-r="y" data-delay=".16" style="font-size:1.08rem;color:#4a6450;line-height:1.85;margin-bottom:2rem;max-width:460px;">Apprendre, évoluer et construire une relation saine avec son chien — dans un cadre bienveillant, accessible à tous, depuis 1990 à Le Blanc.</p>
+      <div data-r="y" data-delay=".22" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+        <a href="cours-horaires.html" class="btn btn-g btn-lg">Découvrir le club →</a>
+        <a href="contact.html" class="btn btn-o btn-lg">Venir essayer une séance</a>
       </div>
-      <div data-cg data-r="y" data-delay=".3" style="display:grid;grid-template-columns:repeat(4,1fr);margin-top:2.2rem;padding-top:2.2rem;border-top:1px solid #e3ebe4;align-items:start;">
+      <div data-cg data-r="y" data-delay=".3" style="display:grid;grid-template-columns:repeat(4,1fr);margin-top:2.2rem;padding-top:2.2rem;border-top:1px solid #e3ebe4;">
   <div style="text-align:center;padding-right:1.5rem;border-right:1px solid #e3ebe4;">
-    <div style="font-size:1.65rem;font-weight:800;color:#b07434;letter-spacing:-.04em;line-height:1;white-space:nowrap;" data-count="4.8" data-suffix="★">0★</div>
-    <div style="font-size:.78rem;color:#4a6450;margin-top:.5rem;font-weight:500;">11 avis vérifiés</div>
+    <div style="font-size:1.7rem;font-weight:800;color:#b07434;letter-spacing:-.04em;line-height:1;white-space:nowrap;" data-count="4.8" data-suffix="★">0★</div>
+    <div style="font-size:.76rem;color:#4a6450;margin-top:.4rem;font-weight:500;">11 avis vérifiés</div>
   </div>
   <div style="text-align:center;padding:0 1.5rem;border-right:1px solid #e3ebe4;">
-    <div style="font-size:1.65rem;font-weight:800;color:#b07434;letter-spacing:-.04em;line-height:1;white-space:nowrap;" data-count="40" data-prefix="~">0</div>
-    <div style="font-size:.78rem;color:#4a6450;margin-top:.5rem;font-weight:500;">Membres actifs</div>
+    <div style="font-size:1.7rem;font-weight:800;color:#b07434;letter-spacing:-.04em;line-height:1;white-space:nowrap;" data-count="40" data-prefix="~">0</div>
+    <div style="font-size:.76rem;color:#4a6450;margin-top:.4rem;font-weight:500;">Membres actifs</div>
   </div>
   <div style="text-align:center;padding:0 1.5rem;border-right:1px solid #e3ebe4;">
-    <div style="font-size:1.65rem;font-weight:800;color:#b07434;letter-spacing:-.04em;line-height:1;white-space:nowrap;" data-count="35" data-prefix="+" data-suffix=" ans">0 ans</div>
-    <div style="font-size:.78rem;color:#4a6450;margin-top:.5rem;font-weight:500;">d'expérience</div>
+    <div style="font-size:1.7rem;font-weight:800;color:#b07434;letter-spacing:-.04em;line-height:1;white-space:nowrap;" data-count="35" data-prefix="+" data-suffix=" ans">0 ans</div>
+    <div style="font-size:.76rem;color:#4a6450;margin-top:.4rem;font-weight:500;">d'expérience</div>
   </div>
   <div style="text-align:center;padding-left:1.5rem;">
-    <div style="font-size:1.65rem;font-weight:800;color:#b07434;letter-spacing:-.04em;line-height:1;white-space:nowrap;" data-count="5">0</div>
-    <div style="font-size:.78rem;color:#4a6450;margin-top:.5rem;font-weight:500;">disciplines</div>
+    <div style="font-size:1.7rem;font-weight:800;color:#b07434;letter-spacing:-.04em;line-height:1;white-space:nowrap;" data-count="5">0</div>
+    <div style="font-size:.76rem;color:#4a6450;margin-top:.4rem;font-weight:500;">disciplines</div>
   </div>
 </div>
     </div>
     <div data-r="x+" data-delay=".1">
-      <div class="flt" style="background:#ffffff;border-radius:28px;padding:2.2rem;border:1px solid #e3ebe4;box-shadow:0 20px 70px rgba(45,106,63,.09);">
-        <div style="background:#f4faf6;border-radius:18px;padding:2rem;text-align:center;margin-bottom:1.4rem;"><div style="font-size:4rem;margin-bottom:.5rem;">🐕</div><div style="font-size:1rem;font-weight:700;color:#0d1a10;letter-spacing:-.02em;">Bienvenue au CECB</div><p style="font-size:.83rem;color:#4a6450;margin-top:.3rem;">Club ouvert à tous, toutes races, tous âges</p></div>
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;background:#fdfcf9;border-radius:12px;border:1px solid #e3ebe4;"><div style="display:flex;align-items:center;gap:9px;"><span style="width:32px;height:32px;background:#eaf4ed;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;">📅</span><span style="font-size:.86rem;font-weight:500;color:#0d1a10;">Chaque samedi matin</span></div><span class="pill pill-g" style="font-size:.62rem;">ZI des Groges</span></div>
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;background:#fdfcf9;border-radius:12px;border:1px solid #e3ebe4;"><div style="display:flex;align-items:center;gap:9px;"><span style="width:32px;height:32px;background:#fef3e4;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;">💰</span><span style="font-size:.86rem;font-weight:500;color:#0d1a10;">105 €/an</span></div><span class="pill pill-c" style="font-size:.62rem;">dont 2 séances</span></div>
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;background:#fdfcf9;border-radius:12px;border:1px solid #e3ebe4;"><div style="display:flex;align-items:center;gap:9px;"><span style="width:32px;height:32px;background:#eaf4ed;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;">👥</span><span style="font-size:.86rem;font-weight:500;color:#0d1a10;">5 binômes max/groupe</span></div><span class="pill pill-g" style="font-size:.62rem;"><span style="width:5px;height:5px;background:#22c55e;border-radius:50%;display:inline-block;"></span>Ouvert</span></div>
+      <div class="flt" style="background:#ffffff;border-radius:26px;padding:2rem;border:1px solid #e3ebe4;box-shadow:0 20px 60px rgba(45,106,63,.09);">
+        <div style="background:#f4faf6;border-radius:16px;padding:1.8rem;text-align:center;margin-bottom:1.2rem;"><div style="font-size:3.6rem;margin-bottom:.4rem;">🐕</div><div style="font-size:.97rem;font-weight:700;color:#0d1a10;letter-spacing:-.02em;">Bienvenue au CECB</div><p style="font-size:.82rem;color:#4a6450;margin-top:.3rem;">Club ouvert à tous, toutes races, tous âges</p></div>
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.7rem .9rem;background:#fdfcf9;border-radius:11px;border:1px solid #e3ebe4;"><div style="display:flex;align-items:center;gap:8px;"><span style="width:30px;height:30px;background:#eaf4ed;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;">📅</span><span style="font-size:.85rem;font-weight:500;color:#0d1a10;">Chaque samedi matin</span></div><span class="pill pill-g" style="font-size:.6rem;">ZI des Groges</span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.7rem .9rem;background:#fdfcf9;border-radius:11px;border:1px solid #e3ebe4;"><div style="display:flex;align-items:center;gap:8px;"><span style="width:30px;height:30px;background:#fef3e4;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;">💰</span><span style="font-size:.85rem;font-weight:500;color:#0d1a10;">105 €/an</span></div><span class="pill pill-c" style="font-size:.6rem;">dont 2 séances</span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.7rem .9rem;background:#fdfcf9;border-radius:11px;border:1px solid #e3ebe4;"><div style="display:flex;align-items:center;gap:8px;"><span style="width:30px;height:30px;background:#eaf4ed;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;">👥</span><span style="font-size:.85rem;font-weight:500;color:#0d1a10;">5 binômes max/groupe</span></div><span class="pill pill-g" style="font-size:.6rem;"><span style="width:5px;height:5px;background:#22c55e;border-radius:50%;display:inline-block;"></span>Ouvert</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section style="padding:7rem 3rem;background:#ffffff;">
+<section style="padding:6rem 3rem;background:#ffffff;">
   <div style="max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;">
     <div>
       <div data-r="x-"><span class="pill pill-g" style="margin-bottom:1.2rem;">Notre philosophie</span></div>
-      <h2 data-r="x-" data-delay=".07" style="font-size:clamp(2.2rem,3.5vw,3.2rem);font-weight:800;letter-spacing:-.04em;color:#0d1a10;line-height:1.08;margin-bottom:1.4rem;"><span class="sib">L'éducation positive,</span> c'est quoi exactement ?</h2>
+      <h2 data-r="x-" data-delay=".07" style="font-size:clamp(2.2rem,3.5vw,3.2rem);font-weight:800;letter-spacing:-.04em;color:#0d1a10;line-height:1.08;margin-bottom:1.3rem;"><span class="sib">L'éducation positive,</span> c'est quoi exactement&nbsp;?</h2>
       <p data-r="x-" data-delay=".13" style="font-size:.97rem;color:#4a6450;line-height:1.9;margin-bottom:.9rem;">L'éducation du chien n'est pas une science exacte — c'est la construction d'un <strong style="color:#0d1a10;font-weight:600;">lien unique entre le chien et son maître</strong>.</p>
       <p data-r="x-" data-delay=".18" style="font-size:.97rem;color:#4a6450;line-height:1.9;margin-bottom:2rem;">Le principe : <strong style="color:#0d1a10;font-weight:600;">renforcer les bons comportements, ignorer les mauvais</strong> — toujours par la récompense et l'encouragement par la voix.</p>
       <div data-r="x-" data-delay=".23"><a href="le-club.html" class="btn btn-o">En savoir plus sur le club →</a></div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:12px;">
-      <div class="hov" data-r="x+" style="background:#f4faf6;border:1.5px solid #eaf4ed;border-radius:20px;padding:1.5rem;display:flex;gap:14px;align-items:flex-start;"><div style="width:46px;height:46px;background:#eaf4ed;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">🤝</div><div><div style="font-size:.95rem;font-weight:600;color:#0d1a10;margin-bottom:.3rem;">Respect de l'animal</div><p style="font-size:.83rem;color:#4a6450;line-height:1.65;">Chaque chien est unique. On respecte son état émotionnel, mental et physique.</p></div></div>
-      <div class="hov" data-r="x+" data-delay=".08" style="background:#fff8f0;border:1.5px solid #fef3e4;border-radius:20px;padding:1.5rem;display:flex;gap:14px;align-items:flex-start;"><div style="width:46px;height:46px;background:#fef3e4;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">🎁</div><div><div style="font-size:.95rem;font-weight:600;color:#0d1a10;margin-bottom:.3rem;">Récompense & encouragement</div><p style="font-size:.83rem;color:#4a6450;line-height:1.65;">On renforce ce qui va bien — jamais de punition, toujours de la bienveillance.</p></div></div>
-      <div class="hov" data-r="x+" data-delay=".16" style="background:#f4faf6;border:1.5px solid #eaf4ed;border-radius:20px;padding:1.5rem;display:flex;gap:14px;align-items:flex-start;"><div style="width:46px;height:46px;background:#eaf4ed;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">💚</div><div><div style="font-size:.95rem;font-weight:600;color:#0d1a10;margin-bottom:.3rem;">Complicité maître-chien</div><p style="font-size:.83rem;color:#4a6450;line-height:1.65;">L'objectif final : une relation harmonieuse et durable avec votre compagnon.</p></div></div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="hov" data-r="x+" style="background:#f4faf6;border:1.5px solid #eaf4ed;border-radius:18px;padding:1.4rem;display:flex;gap:13px;align-items:flex-start;"><div style="width:44px;height:44px;background:#eaf4ed;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">🤝</div><div><div style="font-size:.93rem;font-weight:600;color:#0d1a10;margin-bottom:.3rem;">Respect de l'animal</div><p style="font-size:.82rem;color:#4a6450;line-height:1.65;">On respecte l'état émotionnel, mental et physique de chaque chien.</p></div></div>
+      <div class="hov" data-r="x+" data-delay=".08" style="background:#fff8f0;border:1.5px solid #fef3e4;border-radius:18px;padding:1.4rem;display:flex;gap:13px;align-items:flex-start;"><div style="width:44px;height:44px;background:#fef3e4;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">🎁</div><div><div style="font-size:.93rem;font-weight:600;color:#0d1a10;margin-bottom:.3rem;">Récompense & encouragement</div><p style="font-size:.82rem;color:#4a6450;line-height:1.65;">On renforce ce qui va bien — jamais de punition, toujours de la bienveillance.</p></div></div>
+      <div class="hov" data-r="x+" data-delay=".16" style="background:#f4faf6;border:1.5px solid #eaf4ed;border-radius:18px;padding:1.4rem;display:flex;gap:13px;align-items:flex-start;"><div style="width:44px;height:44px;background:#eaf4ed;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">💚</div><div><div style="font-size:.93rem;font-weight:600;color:#0d1a10;margin-bottom:.3rem;">Complicité maître-chien</div><p style="font-size:.82rem;color:#4a6450;line-height:1.65;">L'objectif final : une relation harmonieuse et durable avec votre compagnon.</p></div></div>
     </div>
   </div>
 </section>
 
-<section style="padding:7rem 3rem;background:#f4faf6;">
+<section style="padding:6rem 3rem;background:#f4faf6;">
   <div style="max-width:1140px;margin:0 auto;">
-    <div data-r="y" style="text-align:center;margin-bottom:3.5rem;">
+    <div data-r="y" style="text-align:center;margin-bottom:3rem;">
       <span class="pill pill-g" style="margin-bottom:1rem;">Programme</span>
-      <h2 style="font-size:clamp(2.2rem,3.5vw,3.2rem);font-weight:800;letter-spacing:-.04em;color:#0d1a10;line-height:1.08;margin-bottom:.8rem;"><span class="sib">Tous les samedis matin</span><br>pour vous et votre chien</h2>
-      <p style="font-size:.97rem;color:#4a6450;max-width:500px;margin:0 auto;line-height:1.8;">ZI des Groges — Le Blanc. Groupes de 5 binômes max. Vaccins à jour requis.</p>
+      <h2 style="font-size:clamp(2.2rem,3.5vw,3rem);font-weight:800;letter-spacing:-.04em;color:#0d1a10;line-height:1.08;margin-bottom:.7rem;"><span class="sib">Tous les samedis matin</span><br>pour vous et votre chien</h2>
+      <p style="font-size:.95rem;color:#4a6450;max-width:480px;margin:0 auto;line-height:1.8;">ZI des Groges — Le Blanc. 5 binômes max par groupe.</p>
     </div>
     <p style="font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#4a6450;margin-bottom:.8rem;">Cours d'obéissance</p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:2rem;">
-      <div class="hov" data-r="y" data-delay="0" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:22px;padding:1.8rem;display:flex;flex-direction:column;gap:12px;">
-  <div style="font-size:2.2rem;">🐣</div>
-  <div><span class="pill pill-c" style="margin-bottom:.5rem;font-size:.62rem;">Dès 2 mois ½</span>
-  <div style="font-size:1.02rem;font-weight:700;color:#0d1a10;letter-spacing:-.02em;margin-top:.4rem;">École du chiot</div></div>
-  <p style="font-size:.84rem;color:#4a6450;line-height:1.7;flex:1;">Socialisation, découverte de l'environnement, premiers apprentissages en douceur.</p>
-  <div style="display:flex;align-items:center;gap:6px;font-size:.8rem;color:#2d6a3f;font-weight:600;padding-top:12px;border-top:1px solid #e3ebe4;"><span style="width:5px;height:5px;background:#2d6a3f;border-radius:50%;flex-shrink:0;"></span>Samedi 9h45 – 10h30</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.5rem;">
+      <div class="hov" data-r="y" data-delay="0" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;gap:10px;">
+  <div style="font-size:2rem;">🐣</div>
+  <div><span class="pill pill-c" style="font-size:.62rem;">Dès 2 mois ½</span>
+  <div style="font-size:1rem;font-weight:700;color:#0d1a10;letter-spacing:-.02em;margin-top:.4rem;">École du chiot</div></div>
+  <p style="font-size:.84rem;color:#4a6450;line-height:1.7;flex:1;">Socialisation, découverte, premiers apprentissages en douceur.</p>
+  <div style="display:flex;align-items:center;gap:6px;font-size:.79rem;color:#2d6a3f;font-weight:600;padding-top:10px;border-top:1px solid #e3ebe4;"><span style="width:5px;height:5px;background:#2d6a3f;border-radius:50%;flex-shrink:0;"></span>Samedi 9h45–10h30</div>
 </div>
-      <div class="hov" data-r="y" data-delay="0.08" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:22px;padding:1.8rem;display:flex;flex-direction:column;gap:12px;">
-  <div style="font-size:2.2rem;">🎯</div>
-  <div><span class="pill pill-g" style="margin-bottom:.5rem;font-size:.62rem;">Débutants</span>
-  <div style="font-size:1.02rem;font-weight:700;color:#0d1a10;letter-spacing:-.02em;margin-top:.4rem;">Cours ado A</div></div>
-  <p style="font-size:.84rem;color:#4a6450;line-height:1.7;flex:1;">Marche en laisse, assis, couché, debout. Pour les chiens dès 8 mois, débutants ou sortants de l'école.</p>
-  <div style="display:flex;align-items:center;gap:6px;font-size:.8rem;color:#2d6a3f;font-weight:600;padding-top:12px;border-top:1px solid #e3ebe4;"><span style="width:5px;height:5px;background:#2d6a3f;border-radius:50%;flex-shrink:0;"></span>Samedi 9h00 – 9h45</div>
+      <div class="hov" data-r="y" data-delay="0.08" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;gap:10px;">
+  <div style="font-size:2rem;">🎯</div>
+  <div><span class="pill pill-g" style="font-size:.62rem;">Débutants</span>
+  <div style="font-size:1rem;font-weight:700;color:#0d1a10;letter-spacing:-.02em;margin-top:.4rem;">Cours ado A</div></div>
+  <p style="font-size:.84rem;color:#4a6450;line-height:1.7;flex:1;">Marche en laisse, assis, couché, debout. Dès 8 mois, débutants ou sortants de l'école.</p>
+  <div style="display:flex;align-items:center;gap:6px;font-size:.79rem;color:#2d6a3f;font-weight:600;padding-top:10px;border-top:1px solid #e3ebe4;"><span style="width:5px;height:5px;background:#2d6a3f;border-radius:50%;flex-shrink:0;"></span>Samedi 9h–9h45</div>
 </div>
-      <div class="hov" data-r="y" data-delay="0.16" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:22px;padding:1.8rem;display:flex;flex-direction:column;gap:12px;">
-  <div style="font-size:2.2rem;">⭐</div>
-  <div><span class="pill pill-g" style="margin-bottom:.5rem;font-size:.62rem;">Confirmés</span>
-  <div style="font-size:1.02rem;font-weight:700;color:#0d1a10;letter-spacing:-.02em;margin-top:.4rem;">Cours ado B</div></div>
-  <p style="font-size:.84rem;color:#4a6450;line-height:1.7;flex:1;">Travail sans laisse — écoute et rappel maîtrisés. Accès aux disciplines sportives en loisirs.</p>
-  <div style="display:flex;align-items:center;gap:6px;font-size:.8rem;color:#2d6a3f;font-weight:600;padding-top:12px;border-top:1px solid #e3ebe4;"><span style="width:5px;height:5px;background:#2d6a3f;border-radius:50%;flex-shrink:0;"></span>Samedi 10h30 – 11h15</div>
+      <div class="hov" data-r="y" data-delay="0.16" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;gap:10px;">
+  <div style="font-size:2rem;">⭐</div>
+  <div><span class="pill pill-g" style="font-size:.62rem;">Confirmés</span>
+  <div style="font-size:1rem;font-weight:700;color:#0d1a10;letter-spacing:-.02em;margin-top:.4rem;">Cours ado B</div></div>
+  <p style="font-size:.84rem;color:#4a6450;line-height:1.7;flex:1;">Travail sans laisse — écoute et rappel maîtrisés. Accès aux disciplines sportives.</p>
+  <div style="display:flex;align-items:center;gap:6px;font-size:.79rem;color:#2d6a3f;font-weight:600;padding-top:10px;border-top:1px solid #e3ebe4;"><span style="width:5px;height:5px;background:#2d6a3f;border-radius:50%;flex-shrink:0;"></span>Samedi 10h30–11h15</div>
 </div>
     </div>
-    <p style="font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#4a6450;margin-bottom:.8rem;">Pratiques sportives <span style="font-weight:400;opacity:.7;">(écoute & rappel requis)</span></p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:2.5rem;">
-      <div class="hov" data-r="y" data-delay="0.24" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:22px;padding:1.8rem;display:flex;flex-direction:column;gap:12px;">
-  <div style="font-size:2.2rem;">🎵</div>
-  <div><span class="pill pill-c" style="margin-bottom:.5rem;font-size:.62rem;">Dog dancing</span>
-  <div style="font-size:1.02rem;font-weight:700;color:#0d1a10;letter-spacing:-.02em;margin-top:.4rem;">Obérythmée</div></div>
-  <p style="font-size:.84rem;color:#4a6450;line-height:1.7;flex:1;">Tricks enchaînés en musique. Grande complicité dans la joie et la bonne humeur, en respectant les capacités physiques et mentales du chien.</p>
-  <div style="display:flex;align-items:center;gap:6px;font-size:.8rem;color:#2d6a3f;font-weight:600;padding-top:12px;border-top:1px solid #e3ebe4;"><span style="width:5px;height:5px;background:#2d6a3f;border-radius:50%;flex-shrink:0;"></span>Samedi matin</div>
+    <p style="font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#4a6450;margin-bottom:.8rem;">Pratiques sportives <span style="font-weight:400;opacity:.65;">(écoute & rappel requis)</span></p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:2.5rem;">
+      <div class="hov" data-r="y" data-delay="0.24" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;gap:10px;">
+  <div style="font-size:2rem;">🎵</div>
+  <div><span class="pill pill-c" style="font-size:.62rem;">Dog dancing</span>
+  <div style="font-size:1rem;font-weight:700;color:#0d1a10;letter-spacing:-.02em;margin-top:.4rem;">Obérythmée</div></div>
+  <p style="font-size:.84rem;color:#4a6450;line-height:1.7;flex:1;">Tricks enchaînés en musique. Grande complicité, dans la joie et la bonne humeur.</p>
+  <div style="display:flex;align-items:center;gap:6px;font-size:.79rem;color:#2d6a3f;font-weight:600;padding-top:10px;border-top:1px solid #e3ebe4;"><span style="width:5px;height:5px;background:#2d6a3f;border-radius:50%;flex-shrink:0;"></span>Samedi matin</div>
 </div>
-      <div class="hov" data-r="y" data-delay="0.32" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:22px;padding:1.8rem;display:flex;flex-direction:column;gap:12px;">
-  <div style="font-size:2.2rem;">🏃</div>
-  <div><span class="pill pill-g" style="margin-bottom:.5rem;font-size:.62rem;">Sport</span>
-  <div style="font-size:1.02rem;font-weight:700;color:#0d1a10;letter-spacing:-.02em;margin-top:.4rem;">Agility</div></div>
-  <p style="font-size:.84rem;color:#4a6450;line-height:1.7;flex:1;">Maître et chien sur un parcours d'obstacles dans un temps défini. Uniquement à la voix et par gestes. Sportif !</p>
-  <div style="display:flex;align-items:center;gap:6px;font-size:.8rem;color:#2d6a3f;font-weight:600;padding-top:12px;border-top:1px solid #e3ebe4;"><span style="width:5px;height:5px;background:#2d6a3f;border-radius:50%;flex-shrink:0;"></span>Samedi matin</div>
+      <div class="hov" data-r="y" data-delay="0.32" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;gap:10px;">
+  <div style="font-size:2rem;">🏃</div>
+  <div><span class="pill pill-g" style="font-size:.62rem;">Sport</span>
+  <div style="font-size:1rem;font-weight:700;color:#0d1a10;letter-spacing:-.02em;margin-top:.4rem;">Agility</div></div>
+  <p style="font-size:.84rem;color:#4a6450;line-height:1.7;flex:1;">Parcours d'obstacles à la voix et par gestes. Sportif et fédérateur !</p>
+  <div style="display:flex;align-items:center;gap:6px;font-size:.79rem;color:#2d6a3f;font-weight:600;padding-top:10px;border-top:1px solid #e3ebe4;"><span style="width:5px;height:5px;background:#2d6a3f;border-radius:50%;flex-shrink:0;"></span>Samedi matin</div>
 </div>
-      <div class="hov" data-r="y" data-delay="0.4" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:22px;padding:1.8rem;display:flex;flex-direction:column;gap:12px;">
-  <div style="font-size:2.2rem;">🏟️</div>
-  <div><span class="pill pill-g" style="margin-bottom:.5rem;font-size:.62rem;">Nouveau !</span>
-  <div style="font-size:1.02rem;font-weight:700;color:#0d1a10;letter-spacing:-.02em;margin-top:.4rem;">Hooper</div></div>
-  <p style="font-size:.84rem;color:#4a6450;line-height:1.7;flex:1;">Arceaux, tonneaux, barils, tunnels — mouvements fluides qui préservent les articulations. Guide à la voix uniquement.</p>
-  <div style="display:flex;align-items:center;gap:6px;font-size:.8rem;color:#2d6a3f;font-weight:600;padding-top:12px;border-top:1px solid #e3ebe4;"><span style="width:5px;height:5px;background:#2d6a3f;border-radius:50%;flex-shrink:0;"></span>Samedi matin</div>
+      <div class="hov" data-r="y" data-delay="0.4" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;gap:10px;">
+  <div style="font-size:2rem;">🏟️</div>
+  <div><span class="pill pill-g" style="font-size:.62rem;">Nouveau !</span>
+  <div style="font-size:1rem;font-weight:700;color:#0d1a10;letter-spacing:-.02em;margin-top:.4rem;">Hooper</div></div>
+  <p style="font-size:.84rem;color:#4a6450;line-height:1.7;flex:1;">Arceaux, tonneaux, barils, tunnels. Mouvements fluides qui préservent les articulations.</p>
+  <div style="display:flex;align-items:center;gap:6px;font-size:.79rem;color:#2d6a3f;font-weight:600;padding-top:10px;border-top:1px solid #e3ebe4;"><span style="width:5px;height:5px;background:#2d6a3f;border-radius:50%;flex-shrink:0;"></span>Samedi matin</div>
 </div>
     </div>
     <div data-r="y" style="text-align:center;"><a href="cours-horaires.html" class="btn btn-g btn-lg">Voir le programme complet →</a></div>
   </div>
 </section>
 
-<section style="padding:7rem 3rem;background:#fdfcf9;">
+<section style="padding:6rem 3rem;background:#fdfcf9;">
   <div style="max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;">
     <div>
       <div data-r="x-"><span class="pill pill-g" style="margin-bottom:1.2rem;">Adhésion</span></div>
       <h2 data-r="x-" data-delay=".07" style="font-size:clamp(2.2rem,3.5vw,3rem);font-weight:800;letter-spacing:-.04em;color:#0d1a10;line-height:1.08;margin-bottom:1.2rem;"><span class="sib">Simple,</span><br>accessible à tous</h2>
       <p data-r="x-" data-delay=".13" style="font-size:.97rem;color:#4a6450;line-height:1.85;margin-bottom:2rem;">105€/an dont 2 séances incluses — un tarif inchangé depuis plus de 20 ans.</p>
-      <div data-r="x-" data-delay=".18" style="background:#f4faf6;border:1.5px solid #b4d9bf;border-radius:18px;padding:1.5rem;margin-bottom:1rem;">
-        <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#4a6450;margin-bottom:1rem;">Cotisation annuelle</div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;border-bottom:1px solid #e3ebe4;"><span style="font-size:.9rem;color:#4a6450;">1 maître · 1 chien</span><strong style="font-size:1.05rem;font-weight:800;color:#b07434;">105 €/an</strong></div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;border-bottom:1px solid #e3ebe4;"><span style="font-size:.9rem;color:#4a6450;">2e chien</span><strong style="font-size:1.05rem;font-weight:800;color:#b07434;">+ 20 €</strong></div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;"><span style="font-size:.9rem;color:#4a6450;">Cotisation familiale</span><strong style="font-size:1.05rem;font-weight:800;color:#b07434;">155 €/an</strong></div>
-        <div style="background:#eaf4ed;border-radius:10px;padding:.8rem 1rem;margin-top:.9rem;font-size:.82rem;color:#2d6a3f;font-weight:500;">🎁 Les 2 premières séances sont incluses dans la cotisation.</div>
+      <div data-r="x-" data-delay=".18" style="background:#f4faf6;border:1.5px solid #b4d9bf;border-radius:16px;padding:1.4rem;margin-bottom:1rem;">
+        <div style="font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:#4a6450;margin-bottom:.9rem;">Cotisation annuelle</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:.65rem 0;border-bottom:1px solid #e3ebe4;"><span style="font-size:.9rem;color:#4a6450;">1 maître · 1 chien</span><strong style="font-size:1rem;font-weight:800;color:#b07434;">105 €/an</strong></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:.65rem 0;border-bottom:1px solid #e3ebe4;"><span style="font-size:.9rem;color:#4a6450;">2e chien</span><strong style="font-size:1rem;font-weight:800;color:#b07434;">+ 20 €</strong></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:.65rem 0;"><span style="font-size:.9rem;color:#4a6450;">Cotisation familiale</span><strong style="font-size:1rem;font-weight:800;color:#b07434;">155 €/an</strong></div>
+        <div style="background:#eaf4ed;border-radius:9px;padding:.75rem .9rem;margin-top:.8rem;font-size:.81rem;color:#2d6a3f;font-weight:500;">🎁 Les 2 premières séances sont incluses dans la cotisation.</div>
       </div>
       <div data-r="x-" data-delay=".22" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-        <a href="data:application/pdf;base64," download="feuille-adhesion-CECB36.pdf" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:#0d1a10;padding:10px 13px;background:#ffffff;border-radius:10px;border:1px solid #e3ebe4;font-size:.82rem;font-weight:500;">📄 Feuille d'adhésion</a>
-        <a href="data:application/pdf;base64," download="reglement-terrain-CECB36.pdf" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:#0d1a10;padding:10px 13px;background:#ffffff;border-radius:10px;border:1px solid #e3ebe4;font-size:.82rem;font-weight:500;">📋 Règlement du terrain</a>
+        <a href="data:application/pdf;base64," download="feuille-adhesion-CECB36.pdf" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:#0d1a10;padding:9px 12px;background:#ffffff;border-radius:10px;border:1px solid #e3ebe4;font-size:.82rem;font-weight:500;">📄 Feuille d'adhésion</a>
+        <a href="data:application/pdf;base64," download="reglement-terrain-CECB36.pdf" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:#0d1a10;padding:9px 12px;background:#ffffff;border-radius:10px;border:1px solid #e3ebe4;font-size:.82rem;font-weight:500;">📋 Règlement du terrain</a>
       </div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:12px;">
-      <div data-r="x+" style="background:#2d6a3f;border-radius:24px;padding:2.5rem 2.2rem;color:#fff;text-align:center;">
-        <div style="font-size:2.8rem;margin-bottom:1rem;">🐾</div>
-        <div style="font-size:1.5rem;font-weight:800;letter-spacing:-.03em;margin-bottom:.7rem;line-height:1.2;">Prêt à rejoindre<br><span class="sib">l'aventure ?</span></div>
-        <p style="font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:1.8rem;max-width:300px;margin-left:auto;margin-right:auto;">Sandrine et l'équipe vous accueilleront le samedi matin. Les 2 premières séances sont incluses.</p>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div data-r="x+" style="background:#2d6a3f;border-radius:22px;padding:2.2rem;color:#fff;text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:.8rem;">🐾</div>
+        <div style="font-size:1.4rem;font-weight:800;letter-spacing:-.03em;margin-bottom:.6rem;line-height:1.2;">Prêt à rejoindre<br><span class="sib">l'aventure ?</span></div>
+        <p style="font-size:.88rem;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:1.5rem;max-width:280px;margin-left:auto;margin-right:auto;">Sandrine et l'équipe vous accueilleront le samedi matin. Les 2 premières séances sont incluses.</p>
         <a href="contact.html" class="btn btn-w">Nous contacter →</a>
       </div>
-      <div data-r="x+" data-delay=".1" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:20px;padding:1.5rem;display:flex;flex-direction:column;gap:10px;">
-        <div class="hov" style="display:flex;align-items:center;gap:11px;padding:.85rem 1rem;border-radius:14px;background:#ffffff;border:1px solid #e3ebe4;"><span style="width:36px;height:36px;background:#f4faf6;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;border:1px solid #e3ebe4;">📞</span><div><div style="font-size:.63rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#4a6450;margin-bottom:1px;">Téléphone</div><a href="tel:0672591918" style="font-size:.9rem;font-weight:500;color:#2d6a3f;text-decoration:none;">06 72 59 19 18</a></div></div>
-        <div class="hov" style="display:flex;align-items:center;gap:11px;padding:.85rem 1rem;border-radius:14px;background:#ffffff;border:1px solid #e3ebe4;"><span style="width:36px;height:36px;background:#f4faf6;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;border:1px solid #e3ebe4;">☎️</span><div><div style="font-size:.63rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#4a6450;margin-bottom:1px;">Fixe</div><a href="tel:0254372195" style="font-size:.9rem;font-weight:500;color:#2d6a3f;text-decoration:none;">02 54 37 21 95</a></div></div>
-        <div class="hov" style="display:flex;align-items:center;gap:11px;padding:.85rem 1rem;border-radius:14px;background:#ffffff;border:1px solid #e3ebe4;"><span style="width:36px;height:36px;background:#f4faf6;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;border:1px solid #e3ebe4;">✉️</span><div><div style="font-size:.63rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#4a6450;margin-bottom:1px;">Email</div><a href="mailto:cecb36300@laposte.net" style="font-size:.9rem;font-weight:500;color:#2d6a3f;text-decoration:none;">cecb36300@laposte.net</a></div></div>
-        <div class="hov" style="display:flex;align-items:center;gap:11px;padding:.85rem 1rem;border-radius:14px;background:#ffffff;border:1px solid #e3ebe4;"><span style="width:36px;height:36px;background:#f4faf6;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;border:1px solid #e3ebe4;">📍</span><div><div style="font-size:.63rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#4a6450;margin-bottom:1px;">Adresse</div><a href="https://maps.google.com/?q=ZI+des+Groges+36300+Le+Blanc" style="font-size:.9rem;font-weight:500;color:#2d6a3f;text-decoration:none;">ZI des Groges · Le Blanc</a></div></div>
+      <div data-r="x+" data-delay=".08" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:18px;padding:1.3rem;display:flex;flex-direction:column;gap:8px;">
+        <div class="hov" style="display:flex;align-items:center;gap:11px;padding:.85rem 1rem;border-radius:13px;background:#ffffff;border:1px solid #e3ebe4;"><span style="width:34px;height:34px;background:#f4faf6;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;border:1px solid #e3ebe4;">📞</span><div><div style="font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#4a6450;margin-bottom:1px;">Téléphone</div><a href="tel:0672591918" style="font-size:.9rem;font-weight:500;color:#2d6a3f;text-decoration:none;">06 72 59 19 18</a></div></div>
+        <div class="hov" style="display:flex;align-items:center;gap:11px;padding:.85rem 1rem;border-radius:13px;background:#ffffff;border:1px solid #e3ebe4;"><span style="width:34px;height:34px;background:#f4faf6;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;border:1px solid #e3ebe4;">☎️</span><div><div style="font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#4a6450;margin-bottom:1px;">Fixe</div><a href="tel:0254372195" style="font-size:.9rem;font-weight:500;color:#2d6a3f;text-decoration:none;">02 54 37 21 95</a></div></div>
+        <div class="hov" style="display:flex;align-items:center;gap:11px;padding:.85rem 1rem;border-radius:13px;background:#ffffff;border:1px solid #e3ebe4;"><span style="width:34px;height:34px;background:#f4faf6;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;border:1px solid #e3ebe4;">✉️</span><div><div style="font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#4a6450;margin-bottom:1px;">Email</div><a href="mailto:cecb36300@laposte.net" style="font-size:.9rem;font-weight:500;color:#2d6a3f;text-decoration:none;">cecb36300@laposte.net</a></div></div>
+        <div class="hov" style="display:flex;align-items:center;gap:11px;padding:.85rem 1rem;border-radius:13px;background:#ffffff;border:1px solid #e3ebe4;"><span style="width:34px;height:34px;background:#f4faf6;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;border:1px solid #e3ebe4;">📍</span><div><div style="font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#4a6450;margin-bottom:1px;">Adresse</div><a href="https://maps.google.com/?q=ZI+des+Groges+36300+Le+Blanc" style="font-size:.9rem;font-weight:500;color:#2d6a3f;text-decoration:none;">ZI des Groges · Le Blanc</a></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section style="padding:7rem 3rem;background:#ffffff;">
+<section style="padding:6rem 3rem;background:#f4faf6;">
   <div style="max-width:1140px;margin:0 auto;">
-    <div data-r="y" style="display:flex;align-items:baseline;gap:1rem;margin-bottom:3rem;flex-wrap:wrap;">
+    <div data-r="y" style="text-align:center;margin-bottom:3rem;">
+      <span class="pill pill-g" style="margin-bottom:1rem;">Aucun prérequis</span>
+      <h2 style="font-size:clamp(2.2rem,3.5vw,3rem);font-weight:800;letter-spacing:-.04em;color:#0d1a10;line-height:1.08;margin-bottom:.8rem;"><span class="sib">Le club accueille</span><br>tous les profils</h2>
+      <p style="font-size:.95rem;color:#4a6450;max-width:500px;margin:0 auto;line-height:1.8;">"Mon chien écoute rien", "il est trop vieux", "je débute"… On entend ça tous les jours — et c'est exactement pour ça qu'on est là.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px;">
+      <div class="hov" data-r="y" data-delay="0" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:20px;padding:1.6rem;display:flex;gap:13px;align-items:flex-start;"><span style="font-size:1.8rem;flex-shrink:0;">🐣</span><div><div style="font-size:.97rem;font-weight:700;color:#0d1a10;margin-bottom:.4rem;">Les chiots</div><p style="font-size:.84rem;color:#4a6450;line-height:1.7;">Dès 2 mois et demi. Plus tôt on commence, plus c'est facile — mais aucune urgence.</p></div></div><div class="hov" data-r="y" data-delay="0.1" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:20px;padding:1.6rem;display:flex;gap:13px;align-items:flex-start;"><span style="font-size:1.8rem;flex-shrink:0;">🐕</span><div><div style="font-size:.97rem;font-weight:700;color:#0d1a10;margin-bottom:.4rem;">Les chiens adultes</div><p style="font-size:.84rem;color:#4a6450;line-height:1.7;">Il n'est jamais trop tard. Un chien de 5, 8 ou 10 ans peut tout à fait apprendre et évoluer.</p></div></div><div class="hov" data-r="y" data-delay="0.2" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:20px;padding:1.6rem;display:flex;gap:13px;align-items:flex-start;"><span style="font-size:1.8rem;flex-shrink:0;">🙋</span><div><div style="font-size:.97rem;font-weight:700;color:#0d1a10;margin-bottom:.4rem;">Les débutants</div><p style="font-size:.84rem;color:#4a6450;line-height:1.7;">Zéro expérience requise. On part de zéro ensemble, à votre rythme, sans jugement.</p></div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:2.5rem;">
+      <div class="hov" data-r="y" data-delay="0.3" style="background:#f4faf6;border:1.5px solid #eaf4ed;border-radius:20px;padding:1.6rem;display:flex;gap:13px;align-items:flex-start;"><span style="font-size:1.8rem;flex-shrink:0;">🫶</span><div><div style="font-size:.97rem;font-weight:700;color:#0d1a10;margin-bottom:.4rem;">Les chiens timides</div><p style="font-size:.84rem;color:#4a6450;line-height:1.7;">La méthode positive est particulièrement adaptée aux chiens anxieux ou peu confiants.</p></div></div><div class="hov" data-r="y" data-delay="0.4" style="background:#f4faf6;border:1.5px solid #eaf4ed;border-radius:20px;padding:1.6rem;display:flex;gap:13px;align-items:flex-start;"><span style="font-size:1.8rem;flex-shrink:0;">⚡</span><div><div style="font-size:.97rem;font-weight:700;color:#0d1a10;margin-bottom:.4rem;">Les chiens énergiques</div><p style="font-size:.84rem;color:#4a6450;line-height:1.7;">Agility, hooper, obérythmée… On canalise l'énergie dans des activités sportives et ludiques.</p></div></div><div class="hov" data-r="y" data-delay="0.5" style="background:#fff8f0;border:1.5px solid #fef3e4;border-radius:20px;padding:1.6rem;display:flex;gap:13px;align-items:flex-start;"><span style="font-size:1.8rem;flex-shrink:0;">🌈</span><div><div style="font-size:.97rem;font-weight:700;color:#0d1a10;margin-bottom:.4rem;">Toutes races, toutes tailles</div><p style="font-size:.84rem;color:#4a6450;line-height:1.7;">Chihuahua, berger, labrador, bâtard… Tous les chiens ont leur place au CECB.</p></div></div>
+    </div>
+    <div data-r="s" style="background:#2d6a3f;border-radius:18px;padding:1.8rem 2.2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;">
+      <div>
+        <div style="font-size:1.15rem;font-weight:800;color:#fff;letter-spacing:-.03em;margin-bottom:.3rem;">Une question sur votre situation&nbsp;?</div>
+        <p style="font-size:.88rem;color:rgba(255,255,255,.72);line-height:1.6;">Décrivez-nous votre chien — on vous dit si et comment on peut vous aider.</p>
+      </div>
+      <div style="display:flex;gap:9px;flex-wrap:wrap;flex-shrink:0;">
+        <a href="contact.html" class="btn btn-w">Poser une question →</a>
+        <a href="faq.html" class="btn btn-dim">Voir la FAQ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:6rem 3rem;background:#ffffff;">
+  <div style="max-width:1140px;margin:0 auto;">
+    <div data-r="y" style="display:flex;align-items:baseline;gap:1rem;margin-bottom:2.5rem;flex-wrap:wrap;">
       <h2 style="font-size:clamp(2.2rem,3.5vw,3rem);font-weight:800;letter-spacing:-.04em;color:#0d1a10;"><span class="sib">Ce qu'ils en disent</span></h2>
       <span style="font-size:.88rem;color:#4a6450;">★ 4,8 / 5 · 11 avis vérifiés</span>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-      <div class="hov" data-r="y" data-delay="0" style="background:#fdfcf9;border:1.5px solid #e3ebe4;border-radius:22px;padding:1.8rem;display:flex;flex-direction:column;gap:12px;">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+      <div class="hov" data-r="y" data-delay="0" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;gap:10px;">
   <div style="color:#f59e0b;font-size:.85rem;letter-spacing:2px;">★★★★★</div>
-  <p style="font-size:.88rem;color:#4a6450;line-height:1.8;flex:1;font-style:italic;">"J'ai suivi les cours chiots avec mon berger australien, puis continué avec l'obé rythmée. De vrais conseils et un accompagnement plein de générosité."</p>
-  <div style="display:flex;align-items:center;gap:9px;padding-top:12px;border-top:1px solid #e3ebe4;">
-    <div style="width:34px;height:34px;border-radius:50%;background:#eaf4ed;color:#2d6a3f;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;">CB</div>
-    <div><div style="font-size:.86rem;font-weight:600;color:#0d1a10;">Camille B.</div><div style="font-size:.74rem;color:#4a6450;">Berger australien 🐾</div></div>
+  <p style="font-size:.87rem;color:#4a6450;line-height:1.8;flex:1;font-style:italic;">"J'ai suivi les cours chiots avec mon berger australien, puis continué avec l'obé rythmée. De vrais conseils et un accompagnement plein de générosité."</p>
+  <div style="display:flex;align-items:center;gap:9px;padding-top:10px;border-top:1px solid #e3ebe4;">
+    <div style="width:32px;height:32px;border-radius:50%;background:#eaf4ed;color:#2d6a3f;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;">CB</div>
+    <div><div style="font-size:.85rem;font-weight:600;color:#0d1a10;">Camille B.</div><div style="font-size:.73rem;color:#4a6450;">Berger australien 🐾</div></div>
   </div>
 </div>
-      <div class="hov" data-r="y" data-delay="0.08" style="background:#fdfcf9;border:1.5px solid #e3ebe4;border-radius:22px;padding:1.8rem;display:flex;flex-direction:column;gap:12px;">
+      <div class="hov" data-r="y" data-delay="0.08" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;gap:10px;">
   <div style="color:#f59e0b;font-size:.85rem;letter-spacing:2px;">★★★★★</div>
-  <p style="font-size:.88rem;color:#4a6450;line-height:1.8;flex:1;font-style:italic;">"Ze suis SIBELLE. Mes humains m'ont emmené au club depuis mes 3 mois. J'ai 4 ans, je suis dans la cour des grandes ADOS B !"</p>
-  <div style="display:flex;align-items:center;gap:9px;padding-top:12px;border-top:1px solid #e3ebe4;">
-    <div style="width:34px;height:34px;border-radius:50%;background:#eaf4ed;color:#2d6a3f;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;">🐶</div>
-    <div><div style="font-size:.86rem;font-weight:600;color:#0d1a10;">Sibelle 🐾</div><div style="font-size:.74rem;color:#4a6450;">Membre depuis 3 mois</div></div>
+  <p style="font-size:.87rem;color:#4a6450;line-height:1.8;flex:1;font-style:italic;">"Ze suis SIBELLE. Mes humains m'ont emmené au club depuis mes 3 mois. J'ai 4 ans, je suis dans la cour des grandes ADOS B !"</p>
+  <div style="display:flex;align-items:center;gap:9px;padding-top:10px;border-top:1px solid #e3ebe4;">
+    <div style="width:32px;height:32px;border-radius:50%;background:#eaf4ed;color:#2d6a3f;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;">🐶</div>
+    <div><div style="font-size:.85rem;font-weight:600;color:#0d1a10;">Sibelle 🐾</div><div style="font-size:.73rem;color:#4a6450;">Membre depuis 3 mois</div></div>
   </div>
 </div>
-      <div class="hov" data-r="y" data-delay="0.16" style="background:#fdfcf9;border:1.5px solid #e3ebe4;border-radius:22px;padding:1.8rem;display:flex;flex-direction:column;gap:12px;">
+      <div class="hov" data-r="y" data-delay="0.16" style="background:#ffffff;border:1.5px solid #e3ebe4;border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;gap:10px;">
   <div style="color:#f59e0b;font-size:.85rem;letter-spacing:2px;">★★★★★</div>
-  <p style="font-size:.88rem;color:#4a6450;line-height:1.8;flex:1;font-style:italic;">"Vous avez vécu une belle expérience au CECB ? Partagez-le — vos mots comptent pour les futurs membres !"</p>
-  <div style="display:flex;align-items:center;gap:9px;padding-top:12px;border-top:1px solid #e3ebe4;">
-    <div style="width:34px;height:34px;border-radius:50%;background:#eaf4ed;color:#2d6a3f;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;">?</div>
-    <div><div style="font-size:.86rem;font-weight:600;color:#0d1a10;">Votre témoignage</div><div style="font-size:.74rem;color:#4a6450;">ici 🐾</div></div>
+  <p style="font-size:.87rem;color:#4a6450;line-height:1.8;flex:1;font-style:italic;">"Vous avez vécu une belle expérience au CECB ? Partagez-le — vos mots comptent pour les futurs membres !"</p>
+  <div style="display:flex;align-items:center;gap:9px;padding-top:10px;border-top:1px solid #e3ebe4;">
+    <div style="width:32px;height:32px;border-radius:50%;background:#eaf4ed;color:#2d6a3f;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;">?</div>
+    <div><div style="font-size:.85rem;font-weight:600;color:#0d1a10;">Votre témoignage</div><div style="font-size:.73rem;color:#4a6450;">ici 🐾</div></div>
   </div>
 </div>
     </div>
   </div>
 </section>
 
-<section style="padding:7rem 3rem;background:#f4faf6;">
+<section style="padding:6rem 3rem;background:#f4faf6;">
   <div style="max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;">
     <div data-r="x-">
       <span class="pill pill-g" style="margin-bottom:1.2rem;">Questions fréquentes</span>
@@ -263,7 +290,7 @@ footer{background:#0d1a10;padding:4rem 3rem 2.5rem;}
       <p style="font-size:.95rem;color:#4a6450;line-height:1.8;margin-bottom:1.8rem;">Les réponses aux questions les plus fréquentes. Pour tout le reste — on est là !</p>
       <a href="faq.html" class="btn btn-o">Voir toutes les questions →</a>
     </div>
-    <div data-r="x+" style="padding-top:.5rem;">
+    <div data-r="x+" style="padding-top:.4rem;">
       <div class="fq" data-open="0" onclick="tFq(this)"><div class="fq-q"><span class="fq-qt">Combien coûte l'adhésion ?</span><div class="fq-i">+</div></div><div class="fq-a">105€/an pour un maître et un chien, dont les 2 premières séances incluses. Supplément de 20€ pour un 2e chien, 155€ en cotisation familiale. Inchangé depuis plus de 20 ans.</div></div>
       <div class="fq" data-open="0" onclick="tFq(this)"><div class="fq-q"><span class="fq-qt">Comment fonctionnent les 2 séances ?</span><div class="fq-i">+</div></div><div class="fq-a">Les 2 premières séances sont comprises dans la cotisation annuelle. On adhère d'abord, puis on vient découvrir le club.</div></div>
       <div class="fq" data-open="0" onclick="tFq(this)"><div class="fq-q"><span class="fq-qt">À quel âge commencer ?</span><div class="fq-i">+</div></div><div class="fq-a">Dès 2 mois et demi avec l'école du chiot ! Plus tôt on commence, mieux c'est. Il n'est jamais trop tard.</div></div>
@@ -302,15 +329,12 @@ footer{background:#0d1a10;padding:4rem 3rem 2.5rem;}
 </div></footer>
 <script>
 function tFq(el){var o=el.getAttribute('data-open')==='1';document.querySelectorAll('.fq[data-open="1"]').forEach(function(f){f.setAttribute('data-open','0');f.querySelector('.fq-a').style.display='none';});if(!o){el.setAttribute('data-open','1');el.querySelector('.fq-a').style.display='block';}}
-function filtrer(b,c){document.querySelectorAll('.fb').forEach(function(x){x.style.cssText='padding:5px 14px;border-radius:50px;border:1px solid #e3ebe4;background:#ffffff;color:#4a6450;font-size:.76rem;font-weight:500;cursor:pointer;font-family:inherit;';});b.style.background='#2d6a3f';b.style.color='#fff';b.style.borderColor='#2d6a3f';document.querySelectorAll('.gs').forEach(function(s){s.style.display=(c==='tous'||s.dataset.cat===c)?'block':'none';});}
+function filtrer(b,c){document.querySelectorAll('.fb').forEach(function(x){x.style.cssText='padding:5px 14px;border-radius:50px;border:1px solid #e3ebe4;background:#ffffff;color:#4a6450;font-size:.77rem;font-weight:500;cursor:pointer;font-family:inherit;';});b.style.background='#2d6a3f';b.style.color='#fff';b.style.borderColor='#2d6a3f';document.querySelectorAll('.gs').forEach(function(s){s.style.display=(c==='tous'||s.dataset.cat===c)?'block':'none';});}
 (function(){
-  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var d=parseFloat(e.target.dataset.delay||0);setTimeout(function(){e.target.classList.add('vis');},d*1000);io.unobserve(e.target);}});},{threshold:.08,rootMargin:'0px 0px -20px 0px'});
-  var cio=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){animCounters(e.target);cio.unobserve(e.target);}});},{threshold:.4});
-  function animCounters(p){p.querySelectorAll('[data-count]').forEach(function(el){var t=parseFloat(el.dataset.count);var pre=el.dataset.prefix||'';var suf=el.dataset.suffix||'';var isF=t%1!==0;var dur=1400;var st=null;function step(ts){if(!st)st=ts;var prog=Math.min((ts-st)/dur,1);var ease=1-Math.pow(1-prog,4);var v=t*ease;el.textContent=pre+(isF?v.toFixed(1):Math.round(v))+suf;if(prog<1)requestAnimationFrame(step);}requestAnimationFrame(step);});}
-  document.addEventListener('DOMContentLoaded',function(){
-    document.querySelectorAll('[data-r]').forEach(function(el){io.observe(el);});
-    document.querySelectorAll('[data-cg]').forEach(function(el){cio.observe(el);});
-  });
+  var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){var d=parseFloat(x.target.dataset.delay||0);setTimeout(function(){x.target.classList.add('vis');},d*1000);io.unobserve(x.target);}});},{threshold:.08,rootMargin:'0px 0px -20px 0px'});
+  var cio=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){aC(x.target);cio.unobserve(x.target);}});},{threshold:.4});
+  function aC(p){p.querySelectorAll('[data-count]').forEach(function(el){var t=parseFloat(el.dataset.count),pre=el.dataset.prefix||'',suf=el.dataset.suffix||'',isF=t%1!==0,st=null;function step(ts){if(!st)st=ts;var pr=Math.min((ts-st)/1400,1),ease=1-Math.pow(1-pr,4),v=t*ease;el.textContent=pre+(isF?v.toFixed(1):Math.round(v))+suf;if(pr<1)requestAnimationFrame(step);}requestAnimationFrame(step);});}
+  document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-r]').forEach(function(el){io.observe(el);});document.querySelectorAll('[data-cg]').forEach(function(el){cio.observe(el);});});
 })();
 </script>
 </body>
