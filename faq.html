@@ -202,6 +202,122 @@ footer{background:#0d1a10;padding:3.5rem 2rem 2rem;}
 .fq[data-open="1"] .fq-i{transform:rotate(45deg)!important;background:#2d6a3f!important;color:#fff!important;}
 .fq-i{transition:transform .3s cubic-bezier(.22,1,.36,1),background .25s!important;}
 </style>
+
+<style>
+@media (max-width: 768px) {
+  /* NAV */
+  header { padding: 0 1.2rem; height: 56px; }
+  .ni nav ul { gap: .8rem; }
+  .ni nav ul li:not(:last-child) { display: none; }
+  .ni nav ul li:last-child a { font-size: .78rem; padding: 7px 14px; }
+
+  /* SECTIONS */
+  section, [style*="padding:6rem 3rem"], [style*="padding:7rem 3rem"],
+  [style*="padding:4rem 3rem"], [style*="padding:5rem 3rem"] {
+    padding: 3rem 1.2rem !important;
+  }
+
+  /* GRILLES 2 colonnes → 1 colonne */
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns:1.1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr;gap:6rem"],
+  [style*="grid-template-columns:1fr 1fr;gap:5rem"],
+  [style*="grid-template-columns:1fr 1fr;gap:4rem"],
+  [style*="grid-template-columns:2fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* GRILLES 3 colonnes → 1 colonne */
+  [style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* GRILLES 4 colonnes → 2 colonnes */
+  [style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1px !important;
+  }
+
+  /* STATS hero — 2x2 */
+  [data-cg] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 !important;
+  }
+  [data-cg] > div {
+    border-right: none !important;
+    border-bottom: 1px solid #e3ebe4;
+    padding: .8rem !important;
+  }
+
+  /* HERO h1 */
+  h1 { font-size: clamp(2rem, 8vw, 2.8rem) !important; }
+  h2 { font-size: clamp(1.6rem, 6vw, 2.2rem) !important; }
+
+  /* FLOAT card hero — pas d'animation sur mobile */
+  .flt { animation: none !important; }
+
+  /* Carte hero — cacher sur mobile (trop grande) */
+  section > div > div:last-child > .flt { display: none !important; }
+
+  /* HERO — 1 colonne, centré */
+  section > div[style*="grid-template-columns:1.1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* BOUTONS hero */
+  [style*="display:flex;gap:10px;flex-wrap:wrap;align-items:center"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  [style*="display:flex;gap:10px;flex-wrap:wrap;align-items:center"] .btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* PLANNING tableau — scroll horizontal */
+  [style*="grid-template-columns:84px 1fr 130px 120px"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+  .rh[style*="grid-template-columns:84px"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    padding: 1rem !important;
+  }
+
+  /* FAQ 2 colonnes → 1 */
+  section > div[style*="grid-template-columns:1fr 1fr;gap:3rem"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* FOOTER */
+  .ft-g, footer > div > div:first-child > div[style*="grid-template-columns:2fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* CTA banner horizontal → vertical */
+  [style*="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+
+  /* Pill nav header */
+  .ni > a > div > div:last-child { display: none; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.9rem !important; }
+  h2 { font-size: 1.5rem !important; }
+  .btn-lg { padding: 12px 22px !important; font-size: .88rem !important; }
+  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+}
+</style>
 </head>
 <body style="padding-top:64px;">
 <header>
